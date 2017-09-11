@@ -13,7 +13,11 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
+currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR")
+
 get_global_marketcap <- function(currency = 'USD') {
+
+  stopifnot(currency %in% currencies_list)
 
   jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/global/?convert=',currency)))
 
@@ -21,11 +25,15 @@ get_global_marketcap <- function(currency = 'USD') {
 
 get_marketcap_ticker_all <- function(currency = 'USD') {
 
+  stopifnot(currency %in% currencies_list)
+
   jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency)))
 
 }
 
 plot_top_5_currencies <- function(currency = 'USD') {
+
+  stopifnot(currency %in% currencies_list)
 
   temp <- jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency)))
 
@@ -39,7 +47,7 @@ plot_top_5_currencies <- function(currency = 'USD') {
 
 }
 
-plot_top_5_currencies()
+#plot_top_5_currencies()
 
 
 

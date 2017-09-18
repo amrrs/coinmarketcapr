@@ -22,7 +22,7 @@ get_global_marketcap <- function(currency = 'USD') {
 #' To extract Global Market Cap of Leading Cryptocurrencies
 #'
 #' @param currency currency code - Default is 'USD'
-#' @return A dataframe of top Cryptocurrencies with Currency prices, Market Cap, Rank and more paramaters
+#' @return A dataframe of top Cryptocurrencies with id, name, symbol, rank, price_usd, price_btc, 24h_volume_usd, market_cap_usd, available_supply, total_supply, percent_change_1h, percent_change_24h, percent_change_7d, last_updated
 #' @examples
 #' get_marketcap_ticker_all('EUR')
 #' get_marketcap_ticker_all('GBP')

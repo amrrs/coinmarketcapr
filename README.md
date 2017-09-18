@@ -1,6 +1,6 @@
 Overview
 --------
-The goal of coinmarketcapr is To get Cryptocurrencies Market Cap Prices from Coin Market Cap
+The goal of *coinmarketcapr* is To get Cryptocurrencies Market Cap Prices from Coin Market Cap
 
 Installation
 ------------
@@ -41,3 +41,7 @@ library(coinmarketcapr)
 #get the global market cap details and assign it to a dataframe
 latest_marketcap <- get_global_marketcap('EUR')
 ```
+
+Courtesy
+---------------
+[Coinmarketcap API](https://coinmarketcap.com/api/)

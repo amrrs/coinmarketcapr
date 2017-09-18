@@ -1,10 +1,10 @@
 currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR", "USD")
 
 
-#' To extract Global Market Cap of Leading Cryptocurrencies
+#' To extract Global Market Cap of Cryptocurrency Market
 #'
 #' @param currency currency code - Default is 'USD'
-#' @return A dataframe of Cryptocurrencies with Currency prices, Market Cap, Rank and more paramaters
+#' @return A dataframe of to get global market cap of Cryptocurrencies Market
 #' @examples
 #' get_global_marketcap('AUD')
 #' get_global_marketcap('EUR')

@@ -1,11 +1,11 @@
 Package: coinbasemarketr
 Type: Package
-Title: To get Cryptocurrencies Market Cap Prices from CoinbaseMarket
+Title: To get Cryptocurrencies Market Cap Prices from Coin Market Cap
 Version: 0.1
 Date: 2017-09-18
 Authors@R: as.person(c("AbdulMajedRaja RS <amrrs.data@gmail.com> [aut, cre]", "Srivathsan K <srivibish@gmail.com> [aut]"))
 Maintainer: "AbdulMajedRaja RS <amrrs.data@gmail.com>
-Description: To help 'ICO' enthusiasts to extract and monitor Market Cap and USD Price of Cryptocurrencies from CoinbaseMarket
+Description: To help 'ICO' enthusiasts to extract and monitor Market Cap and USD Price of Cryptocurrencies from Coin Market Cap
 License: CC0
 LazyData: TRUE
 Imports: jsonlite,

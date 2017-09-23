@@ -58,7 +58,8 @@ plot_top_5_currencies <- function(currency = 'USD') {
 
         temp$price_usd <- as.numeric(temp$price_usd)
 
-        ggplot2::ggplot(temp, aes(name,price_usd))+ggplot2::geom_bar( stat = 'identity')
+        ggplot2::ggplot(temp, ggplot2::aes(name,price_usd))+ggplot2::geom_bar(stat = 'identity')
 
 }
+
 

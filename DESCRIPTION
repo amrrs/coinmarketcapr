@@ -11,4 +11,4 @@ LazyData: TRUE
 Imports: jsonlite,
 	RCurl,
 	ggplot2
-
+Suggests: testthat

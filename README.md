@@ -1,3 +1,7 @@
+# coinmarketcapr
+
+[![Build Status](https://travis-ci.org/amrrs/coinmarketcapr.svg?branch=master)](https://travis-ci.org/amrrs/coinmarketcapr) 
+
 Overview
 --------
 The goal of *coinmarketcapr* is To get Cryptocurrencies Market Cap Prices from Coin Market Cap

@@ -1,3 +1,7 @@
+#'@import ggplot2
+#'@import RCurl
+#'@import jsonlite
+
 currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR", "USD")
 
 
@@ -8,7 +12,7 @@ currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EU
 #' @examples
 #' get_global_marketcap('AUD')
 #' get_global_marketcap('EUR')
-
+#' @export
 
 get_global_marketcap <- function(currency = 'USD') {
 
@@ -26,7 +30,7 @@ get_global_marketcap <- function(currency = 'USD') {
 #' @examples
 #' get_marketcap_ticker_all('EUR')
 #' get_marketcap_ticker_all('GBP')
-
+#' @export
 
 get_marketcap_ticker_all <- function(currency = 'USD') {
 
@@ -43,7 +47,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 #' @examples
 #' plot_top_5_currencies('EUR')
 #' plot_top_5_currencies('GBP')
-
+#' @export
 
 
 plot_top_5_currencies <- function(currency = 'USD') {

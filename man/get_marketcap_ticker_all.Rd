@@ -10,7 +10,7 @@ get_marketcap_ticker_all(currency = "USD")
 \item{currency}{currency code - Default is 'USD'}
 }
 \value{
-A dataframe of top Cryptocurrencies with Currency prices, Market Cap, Rank and more paramaters
+A dataframe of top Cryptocurrencies with id, name, symbol, rank, price_usd, price_btc, 24h_volume_usd, market_cap_usd, available_supply, total_supply, percent_change_1h, percent_change_24h, percent_change_7d, last_updated
 }
 \description{
 To extract Global Market Cap of Leading Cryptocurrencies

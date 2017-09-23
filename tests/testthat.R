@@ -1,4 +1,4 @@
 library(testthat)
-library(coinbasemarketr)
+library(coinmarketcapr)
 
-test_check("coinbasemarketr")
+test_check("coinmarketcapr")

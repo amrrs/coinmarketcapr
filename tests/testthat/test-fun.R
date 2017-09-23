@@ -1,4 +1,4 @@
-library(coinbasemarketr)
+library(coinmarketcapr)
 context("get_global_marketcap Output DF Check")
 
 test_that("The output dataframe Type is ",{

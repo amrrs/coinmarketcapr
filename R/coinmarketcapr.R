@@ -43,7 +43,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 #' To plot Top 5 Cryptocurrencies
 #'
 #' @param currency currency code - Default is 'USD'
-#' @return A plot of top Cryptocurrencies based on their rank
+#' @return A ggplot of top Cryptocurrencies based on their rank
 #' @examples
 #' plot_top_5_currencies('EUR')
 #' plot_top_5_currencies('GBP')
@@ -54,9 +54,9 @@ plot_top_5_currencies <- function(currency = 'USD') {
 
         stopifnot(currency %in% currencies_list)
 
-        temp <- jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency)))
+        temp <- data.frame(jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency))))
 
-        temp <- head(temp,5)
+        temp <- temp[1:5,]
 
         #temp$price_usd <- as.numeric(temp$price_usd)
 

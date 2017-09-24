@@ -10,7 +10,7 @@ plot_top_5_currencies(currency = "USD")
 \item{currency}{currency code - Default is 'USD'}
 }
 \value{
-A plot of top Cryptocurrencies based on their rank
+A ggplot of top Cryptocurrencies based on their rank
 }
 \description{
 To plot Top 5 Cryptocurrencies

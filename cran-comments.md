@@ -1,6 +1,6 @@
 ## Resubmission
 
-This is a resubmission. In this version I have updated the DESCRIPTION to fix the non-dictionary software term in Quotes and also rewrote the code without head function.
+This is a resubmission. In this version, I have updated the DESCRIPTION to fix the Title and add reference URL.
 
 ## Test environments
 

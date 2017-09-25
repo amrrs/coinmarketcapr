@@ -4,7 +4,7 @@ Title: Get Cryptocurrencies Market Cap Prices from Coin Market Cap
 Version: 0.1
 Date: 2017-09-24
 Authors@R: c(person("AbdulMajedRaja","RS", email = "amrrs.data@gmail.com", role = "cre"), person("Srivathsan","K", email = "srivibish@gmail.com", role = "aut"))
-Description: To extract and monitor Price and Market cap of 'Crypto currencies' from 'Coin Market Cap'(https://coinmarketcap.com/api/). 
+Description: To extract and monitor Price and Market cap of 'Crypto currencies' from 'Coin Market Cap' (https://coinmarketcap.com/api/). 
 URL: http://github.com/amrrs/coinmarketcapr
 License: CC0
 LazyData: true

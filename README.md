@@ -9,8 +9,9 @@ The goal of *coinmarketcapr* is To get Cryptocurrencies Market Cap Prices from C
 Installation
 ------------
 
+the development version from GitHub:
+
 ``` r
-#  the development version from GitHub:
 # install.packages("devtools")
 devtools::install_github("amrrs/coinmarketcapr")
 ```
@@ -30,7 +31,7 @@ library(coinmarketcapr)
 latest_marketcap <- get_global_marketcap('EUR')
 ```
 
-```coinmarketcap``` can be loaded just like any other R-package with ```library(coinmarketcap)```.
+```coinmarketcapr``` can be loaded just like any other R-package with ```library(coinmarketcapr)```.
 
 **Note:** If you're trying this behind a Firewall, you might get:
 ```Error in open.connection(con, "rb") : Timeout was reached```

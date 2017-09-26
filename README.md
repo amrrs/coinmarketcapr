@@ -9,7 +9,13 @@ The goal of *coinmarketcapr* is To get Cryptocurrencies Market Cap Prices from C
 Installation
 ------------
 
-the development version from GitHub:
+```coinmarketcapr``` can be directly installed from CRAN:
+
+```r
+install.packages("coinmarketcapr")
+```
+
+And the development version can be installed from Github:
 
 ``` r
 # install.packages("devtools")

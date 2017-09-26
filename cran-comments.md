@@ -1,6 +1,6 @@
 ## Resubmission
 
-This is a resubmission. In this version, I have updated the DESCRIPTION to fix the Title and add reference URL.
+This is a resubmission. In this version, I have updated the DESCRIPTION to fix the Caps and reference URL.
 
 ## Test environments
 

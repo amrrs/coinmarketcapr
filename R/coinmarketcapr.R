@@ -32,7 +32,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 
         stopifnot(currency %in% currencies_list)
 
-        data.frame(jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency))))
+        data.frame(jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency,'&limit=0'))))
 
 }
 

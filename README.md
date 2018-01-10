@@ -1,6 +1,7 @@
 # coinmarketcapr
 
-[![Build Status](https://travis-ci.org/amrrs/coinmarketcapr.svg?branch=master)](https://travis-ci.org/amrrs/coinmarketcapr) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/coinmarketcapr)](https://cran.r-project.org/package=coinmarketcapr) [![DOWNLOADSTOTAL](https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr)](https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr) 
+[![Build Status](https://travis-ci.org/amrrs/coinmarketcapr.svg?branch=master)](https://travis-ci.org/amrrs/coinmarketcapr) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/coinmarketcapr)](https://cran.r-project.org/package=coinmarketcapr) [![DOWNLOADSTOTAL](https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr)](https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr) [![codecov](https://codecov.io/gh/amrrs/coinmarketcapr/branch/master/graph/badge.svg)](https://codecov.io/gh/amrrs/coinmarketcapr)
+
 
 Overview
 --------

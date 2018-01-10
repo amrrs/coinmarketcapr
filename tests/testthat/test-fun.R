@@ -18,7 +18,7 @@ test_that("The output dataframe Type is ",{
 })
 
 
-contetxt('plot_top_5_currencies Output ggplot Check')
+context('plot_top_5_currencies Output ggplot Check')
 
 test_that("The output ggplot Type is ",{
 

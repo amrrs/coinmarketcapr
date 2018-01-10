@@ -22,7 +22,7 @@ context('plot_top_5_currencies Output ggplot Check')
 
 test_that("The output ggplot Type is ",{
 
-        expect_is(class(plot_top_5_currencies('USD')),"ggplot")
-        expect_is(class(plot_top_5_currencies()),"ggplot")
+        expect_true(ggplot2::is.ggplot(plot_top_5_currencies('USD')))
+        expect_true(ggplot2::is.ggplot(plot_top_5_currencies()))
 
 })

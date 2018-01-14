@@ -11,5 +11,8 @@ LazyData: true
 Imports: jsonlite,
     ggplot2,
     RCurl
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
 RoxygenNote: 6.0.1
+VignetteBuilder: knitr

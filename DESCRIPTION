@@ -6,7 +6,7 @@ Date: 2017-09-24
 Authors@R: c(person("AbdulMajedRaja","RS", email = "amrrs.data@gmail.com", role = "cre"), person("Srivathsan","K", email = "srivibish@gmail.com", role = "aut"))
 Description: To extract and monitor price and market cap of 'Crypto currencies' from 'Coin Market Cap' <https://coinmarketcap.com/api/>. 
 URL: http://github.com/amrrs/coinmarketcapr
-License: CC0
+License: MIT + file LICENSE
 LazyData: true
 Imports: jsonlite,
     ggplot2,

@@ -2,7 +2,9 @@
 #'
 #' @description
 #' To extract and monitor price and market cap of 'Cryptocurrencies'
-#' from 'CoinMarketCap' <https://coinmarketcap.com/api/>.
+#' from 'CoinMarketCap' <https://coinmarketcap.com/api/> that lists many leading
+#' cryptocurrencies along with their price, 24h trade volume, market cap and
+#' much more in USD and other currencies
 #'
 #' @section See Also:
 #' Useful links:

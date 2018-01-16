@@ -7,7 +7,9 @@
 \title{coinmarketcapr: Get Cryptocurrencies Market Cap Prices from CoinMarketCap}
 \description{
 To extract and monitor price and market cap of 'Cryptocurrencies'
-from 'CoinMarketCap' \url{https://coinmarketcap.com/api/}.
+from 'CoinMarketCap' \url{https://coinmarketcap.com/api/} that lists many leading
+cryptocurrencies along with their price, 24h trade volume, market cap and
+much more in USD and other currencies
 }
 \section{See Also}{
 

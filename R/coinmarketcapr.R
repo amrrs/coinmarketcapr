@@ -10,11 +10,13 @@ currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EU
 #' @export
 
 get_specific_marketcap <- function(currency = 'USD', crypto = 'bitcoin') {
+  
+  stopifnot(currency %in% currencies_list)
+  
+  query = paste0('https://api.coinmarketcap.com/v1/ticker/', crypto, '/?convert=',currency)
 
-        stopifnot(currency %in% currencies_list)
-
-        data.frame(jsonlite::fromJSON(RCurl::getURL(paste0('https://api.coinmarketcap.com/v1/', crypto, '/?convert=',currency))))
-
+  
+  data.frame(jsonlite::fromJSON(RCurl::getURL(query)))
 }
 
 

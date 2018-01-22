@@ -1,6 +1,26 @@
 currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR", "USD")
 
 
+#' To extract Market Cap of Cryptocurrency of specific coin
+#' @param currency currency code - Default is 'USD'
+#' @return A dataframe of to get global market cap of Cryptocurrencies Market
+#' @examples
+#' get_global_marketcap('AUD')
+#' get_global_marketcap('EUR')
+#' @export
+
+get_specific_marketcap <- function(currency = 'USD', crypto = 'bitcoin') {
+  
+  stopifnot(currency %in% currencies_list)
+  
+  query = paste0('https://api.coinmarketcap.com/v1/ticker/', crypto, '/?convert=',currency)
+
+  
+  data.frame(jsonlite::fromJSON(RCurl::getURL(query)))
+}
+
+
+
 #' To extract Global Market Cap of Cryptocurrency Market
 #'
 #' @param currency currency code - Default is 'USD'

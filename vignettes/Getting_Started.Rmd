@@ -15,41 +15,44 @@ knitr::opts_chunk$set(
 )
 ```
 
-This vignette is to help you get started with Coinmarketcapr Package that helps to extract and monitor price and market cap of Cryptocurrencies from 'CoinMarketCap' <https://coinmarketcap.com/api/>. Simply, Coinmarketcapr is an R-binding for Coinmarketcap API that lists Price, Marketcap, Transaction Volume of many Cryptocurrencies and tokens. This package contains three primary functions:
+This vignette is to help you get started with Coinmarketcapr Package that helps to extract and monitor price and market cap of Cryptocurrencies from **CoinMarketCap**. Simply, Coinmarketcapr is an R-binding for Coinmarketcap API that lists Price, Marketcap, Transaction Volume of many Cryptocurrencies and tokens. 
+
+### Basic Functions 
+
+This package contains three primary functions:
 
 - `get_global_marketcap()`
 - `get_marketcap_ticker_all()`
 - `plot_top_5_currencies()`
 
-## Getting Global Marketcap
+### Getting Global Marketcap
 
-This function `get_global_marketcap()`
+This function `get_global_marketcap()` fetches the USD value of global marketcap of all cryptocurrenices.
 
-## Plotting Top 5 Cryptocurrencies
+```{r}
+library(coinmarketcapr)
+get_global_marketcap()
+```
+
+### Extracting all Cryptocurrenices 
+
+This function `get_marketcap_ticker_all()` gets various useful values such as Price, Marketcap, Total Volume, 24-hour Change and much for all the cryptocurrencies. 
+
+```{r}
+library(coinmarketcapr)
+names(get_marketcap_ticker_all())
+```
+
+
+### Plotting Top 5 Cryptocurrencies
 
 This function `plot_top_5_currencies()` makes it straightforward to make a barplot of top 5 cryptocurrencies.
+
 ```{r, fig.cap='Plotting Top 5 Cryptocurrencies', fig.width=6, fig.height=6}
 library(coinmarketcapr)
 plot_top_5_currencies()
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+### Courtesy
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+Coinmarketcapr is powered by Coinmarketcap.com <https://coinmarketcap.com/api/> 

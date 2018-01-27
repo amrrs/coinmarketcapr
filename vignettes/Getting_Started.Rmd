@@ -3,7 +3,7 @@ title: "Getting started with Coinmarketcapr"
 author: "AbdulMajedRaja"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Put the title of your vignette here}
+  %\VignetteIndexEntry{Getting started with Coinmarketcapr}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
@@ -28,7 +28,7 @@ This function `get_global_marketcap()`
 ## Plotting Top 5 Cryptocurrencies
 
 This function `plot_top_5_currencies()` makes it straightforward to make a barplot of top 5 cryptocurrencies.
-```{r, fig.show='hold', fig.cap='Plotting Top 5 Cryptocurrencies'}
+```{r, fig.cap='Plotting Top 5 Cryptocurrencies', fig.width=6, fig.height=6}
 library(coinmarketcapr)
 plot_top_5_currencies()
 ```

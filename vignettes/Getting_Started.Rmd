@@ -1,12 +1,11 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
-date: "`r Sys.Date()`"
+title: "Getting started with Coinmarketcapr"
+author: "AbdulMajedRaja"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Put the title of your vignette here}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 ---
 
 ```{r setup, include = FALSE}
@@ -16,31 +15,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+This vignette is to help you get started with Coinmarketcapr Package that helps to extract and monitor price and market cap of Cryptocurrencies from 'CoinMarketCap' <https://coinmarketcap.com/api/>. Simply, Coinmarketcapr is an R-binding for Coinmarketcap API that lists Price, Marketcap, Transaction Volume of many Cryptocurrencies and tokens. This package contains three primary functions:
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+- `get_global_marketcap()`
+- `get_marketcap_ticker_all()`
+- `plot_top_5_currencies()`
 
-## Vignette Info
+## Getting Global Marketcap
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+This function `get_global_marketcap()`
 
-## Styles
+## Plotting Top 5 Cryptocurrencies
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+This function `plot_top_5_currencies()` makes it straightforward to make a barplot of top 5 cryptocurrencies.
+```{r, fig.show='hold', fig.cap='Plotting Top 5 Cryptocurrencies'}
+library(coinmarketcapr)
+plot_top_5_currencies()
 ```
 
 You can enable figure captions by `fig_caption: yes` in YAML:

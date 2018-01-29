@@ -115,7 +115,7 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 
 Contribution
 ---------------
-Please feel free to report [issues](https://github.com/amrrs/coinmarketcapr/issues/new), comments, or feature requests.
+Please feel free to report [issues](https://github.com/amrrs/coinmarketcapr/issues/new), comments, or feature requests. Please check out our [Contributing guidelines](CONTRIBUTING.md) before raising an issue or Pull Request. 
 
 Courtesy
 ---------------

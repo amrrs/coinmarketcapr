@@ -49,12 +49,24 @@ To resolve this error, Please refer this link: [Configuring R to Use an HTTP or 
 
 Examples
 ---------------
-### Code 
+### Example #1
+**Extract Global Cryptocurreny Market cap:**
+Code:
 ```r
 library(coinmarketcapr)
 
 #get the global market cap details and assign it to a dataframe
 latest_marketcap <- get_global_marketcap('EUR')
+latest_marketcap
+```
+
+Output:
+```
+> latest_marketcap
+  total_market_cap_usd total_24h_volume_usd bitcoin_percentage_of_market_cap active_currencies
+1         572176071090          22204830626                            33.44               897
+  active_assets active_markets last_updated total_market_cap_eur total_24h_volume_eur
+1           570           8235   1517252067          4.63216e+11          17976342525
 ```
 
 Code of Conduct

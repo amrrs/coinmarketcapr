@@ -49,8 +49,11 @@ To resolve this error, Please refer this link: [Configuring R to Use an HTTP or 
 
 Examples
 ---------------
+
 ### Example #1
+
 **Extract Global Cryptocurreny Market cap in Euro Currency:**
+
 Code:
 ```r
 library(coinmarketcapr)
@@ -68,8 +71,10 @@ Output:
 1           570           8235   1517252067          4.63216e+11          17976342525
 ```
 
-### Example #1
-**Extract Global Cryptocurreny Market cap:**
+### Example #2
+
+**Extract Details of all the cryptocurrenices offered by Coinmarketcap**
+
 Code:
 ```r
 library(coinmarketcapr)

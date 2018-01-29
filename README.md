@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/amrrs/coinmarketcapr.svg?branch=master)](https://travis-ci.org/amrrs/coinmarketcapr) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/coinmarketcapr)](https://cran.r-project.org/package=coinmarketcapr) [![DOWNLOADSTOTAL](https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr)](https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr) [![codecov](https://codecov.io/gh/amrrs/coinmarketcapr/branch/master/graph/badge.svg)](https://codecov.io/gh/amrrs/coinmarketcapr) [![rOpenSci](https://badges.ropensci.org/172_status.svg)](https://github.com/ropensci/onboarding/issues/172)
 
-
-
 Overview
 --------
 The goal of *coinmarketcapr* is To get Cryptocurrencies Market Cap Prices from Coin Market Cap
@@ -11,7 +9,7 @@ The goal of *coinmarketcapr* is To get Cryptocurrencies Market Cap Prices from C
 Installation
 ------------
 
-```coinmarketcapr``` can be directly installed from CRAN:
+The stable version of ```coinmarketcapr``` can be installed from CRAN:
 
 ```r
 install.packages("coinmarketcapr")
@@ -54,6 +52,11 @@ library(coinmarketcapr)
 #get the global market cap details and assign it to a dataframe
 latest_marketcap <- get_global_marketcap('EUR')
 ```
+
+Code of Conduct
+---------------
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 
 Courtesy
 ---------------

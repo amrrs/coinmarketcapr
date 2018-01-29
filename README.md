@@ -4,7 +4,7 @@
 
 Overview
 --------
-The goal of *coinmarketcapr* is To get Cryptocurrencies Market Cap Prices from Coin Market Cap
+The goal of *coinmarketcapr* is to help R developers and Data Scientists to extract and monitor price and market cap of various Cryptocurrencies from 'CoinMarketCap' that lists many leading cryptocurrencies along with their price, 24h trade volume, market cap and much more in USD and other currencies. For more info, check [Coinmarketcap API](https://coinmarketcap.com/api/)
 
 Installation
 ------------

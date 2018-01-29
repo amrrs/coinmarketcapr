@@ -57,6 +57,9 @@ Code of Conduct
 ---------------
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
+Contribution
+---------------
+Please feel free to report [issues](https://github.com/coinmarketcapr/issues), comments, or feature requests.
 
 Courtesy
 ---------------

@@ -25,9 +25,13 @@ devtools::install_github("amrrs/coinmarketcapr")
 Dependency Packages
 ------------
 
+`coinmarketcapr` depends on the following packages:
+
 * jsonlite
 * RCurl
 * ggplot2
+
+Hence, these packages will be automatically installed while installing `coinmarketcapr`.
 
 Getting started
 ---------------

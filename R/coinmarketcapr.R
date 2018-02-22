@@ -4,7 +4,7 @@ currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK",
   "TRY", "TWD", "ZAR", "USD")
 
 
-#' To extract Global Market Cap of Cryptocurrency Market
+#' Extract Global Market Cap of Cryptocurrency Market
 #'
 #' @param currency currency code - Default is 'USD'
 #' @return A dataframe of to get global market cap of Cryptocurrencies Market

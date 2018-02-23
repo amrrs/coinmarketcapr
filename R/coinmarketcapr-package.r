@@ -1,7 +1,7 @@
-#' coinmarketcapr: Get Cryptocurrencies Market Cap Prices from CoinMarketCap
+#' coinmarketcapr: Cryptocurrency Market Cap Prices from CoinMarketCap
 #'
 #' @description
-#' To extract and monitor price and market cap of 'Cryptocurrencies'
+#' Extract and monitor price and market cap of 'Cryptocurrencies'
 #' from 'CoinMarketCap' <https://coinmarketcap.com/api/> that lists many leading
 #' cryptocurrencies along with their price, 24h trade volume, market cap and
 #' much more in USD and other currencies.

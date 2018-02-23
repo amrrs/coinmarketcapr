@@ -2,7 +2,9 @@
 
 export(get_global_marketcap)
 export(get_marketcap_ticker_all)
-export(plot_top_5_currencies)
-import(RCurl)
-import(ggplot2)
-import(jsonlite)
+export(plot_top_currencies)
+importFrom(RCurl,getURL)
+importFrom(ggplot2,aes_string)
+importFrom(ggplot2,geom_bar)
+importFrom(ggplot2,ggplot)
+importFrom(jsonlite,fromJSON)

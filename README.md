@@ -40,7 +40,7 @@ Also note that, `coinmarketcapr` connects with Coinmarketcap API, hence it requi
 What's happening
 ----------------
 
-Inside this abstraction of `coinmarketcapr` package, The function that you call from `coinmarketcapr` connects with the Coinmarketcap API using `RCurl` and retreives the required data in the form a `json` file which is then parsed with `jsonlite` and then flattened/converted to a dataframe and stored in your R Environment in the given variable name. 
+Inside this abstraction of `coinmarketcapr` package, The function that you call from `coinmarketcapr` connects with the Coinmarketcap API using `RCurl` (via Internet) and retreives the required data in the form a `json` file which is then parsed with `jsonlite` and then flattened/converted to a dataframe and stored in your R Environment in the given variable name. 
 
 Getting started
 ---------------

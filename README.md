@@ -6,6 +6,7 @@ Overview
 --------
 The goal of *coinmarketcapr* is to help R developers and Data Scientists to extract and monitor price and market cap of various Cryptocurrencies from 'CoinMarketCap' that lists many leading cryptocurrencies along with their price, 24h trade volume, market cap and much more in USD and other currencies. For more info, check [Coinmarketcap API](https://coinmarketcap.com/api/)
 
+
 Installation
 ------------
 
@@ -22,7 +23,7 @@ And the development version can be installed from Github:
 devtools::install_github("amrrs/coinmarketcapr")
 ```
 
-Dependency Packages
+Dependencies
 ------------
 
 `coinmarketcapr` depends on the following packages:
@@ -32,6 +33,14 @@ Dependency Packages
 * ggplot2
 
 Hence, these packages will be automatically installed while installing `coinmarketcapr`.
+
+Also note that, `coinmarketcapr` connects with Coinmarketcap API, hence it requires active internet connection for that. 
+
+
+What's happening
+----------------
+
+Inside this abstraction of `coinmarketcapr` package, The function that you call from `coinmarketcapr` connects with the Coinmarketcap API using `RCurl` and retreives the required data in the form a `json` file which is then parsed with `jsonlite` and then flattened/converted to a dataframe and stored in your R Environment in the given variable name. 
 
 Getting started
 ---------------

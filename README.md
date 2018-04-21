@@ -64,6 +64,7 @@ Examples
 **Extract Global Cryptocurreny Market cap in Euro Currency:**
 
 Code:
+
 ```r
 library(coinmarketcapr)
 

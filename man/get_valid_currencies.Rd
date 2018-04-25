@@ -13,5 +13,5 @@ A character vector of valid currencies supported by coinmarketcap API
 Get Valid Currencies
 }
 \examples{
-get_valid_currenices()
+get_valid_currencies()
 }

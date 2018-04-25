@@ -61,7 +61,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 #'
 #' @param currency currency code - Default is 'USD'
 #' @param k the number of top cryptocurrencies to plot (default is 5)
-#' @return A ggplot of top Cryptocurrencies based on their rank
+#' @return A ggplot of top Cryptocurrencies based on their rank (Market Cap)
 #' @examples
 #' plot_top_currencies('EUR')
 #' plot_top_currencies('GBP')

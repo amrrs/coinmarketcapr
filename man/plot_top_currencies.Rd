@@ -12,7 +12,7 @@ plot_top_currencies(currency = "USD", k = 5)
 \item{k}{the number of top cryptocurrencies to plot (default is 5)}
 }
 \value{
-A ggplot of top Cryptocurrencies based on their rank
+A ggplot of top Cryptocurrencies based on their rank (Market Cap)
 }
 \description{
 Plot The Price of the Largest Market Cap Cryptocurrencies

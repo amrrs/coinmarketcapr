@@ -2,7 +2,7 @@
 % Please edit documentation in R/coinmarketcapr.R
 \name{get_global_marketcap}
 \alias{get_global_marketcap}
-\title{To extract Global Market Cap of Cryptocurrency Market}
+\title{Extract Global Market Cap of Cryptocurrency Market}
 \usage{
 get_global_marketcap(currency = "USD")
 }
@@ -13,7 +13,7 @@ get_global_marketcap(currency = "USD")
 A dataframe of to get global market cap of Cryptocurrencies Market
 }
 \description{
-To extract Global Market Cap of Cryptocurrency Market
+Extract Global Market Cap of Cryptocurrency Market
 }
 \examples{
 get_global_marketcap('AUD')

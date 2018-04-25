@@ -2,7 +2,7 @@
 % Please edit documentation in R/coinmarketcapr.R
 \name{get_marketcap_ticker_all}
 \alias{get_marketcap_ticker_all}
-\title{To extract Global Market Cap of Leading Cryptocurrencies}
+\title{Extract Global Market Cap of Leading Cryptocurrencies}
 \usage{
 get_marketcap_ticker_all(currency = "USD")
 }
@@ -13,7 +13,7 @@ get_marketcap_ticker_all(currency = "USD")
 A dataframe of top Cryptocurrencies with id, name, symbol, rank, price_usd, price_btc, 24h_volume_usd, market_cap_usd, available_supply, total_supply, percent_change_1h, percent_change_24h, percent_change_7d, last_updated
 }
 \description{
-To extract Global Market Cap of Leading Cryptocurrencies
+Extract Global Market Cap of Leading Cryptocurrencies
 }
 \examples{
 get_marketcap_ticker_all('EUR')

@@ -2,6 +2,7 @@
 
 export(get_global_marketcap)
 export(get_marketcap_ticker_all)
+export(get_valid_currencies)
 export(plot_top_currencies)
 importFrom(RCurl,getURL)
 importFrom(ggplot2,aes_string)

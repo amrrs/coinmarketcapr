@@ -2,7 +2,7 @@
 % Please edit documentation in R/coinmarketcapr.R
 \name{plot_top_currencies}
 \alias{plot_top_currencies}
-\title{To plot Top Cryptocurrencies}
+\title{Plot The Price of the Largest Market Cap Cryptocurrencies}
 \usage{
 plot_top_currencies(currency = "USD", k = 5)
 }
@@ -15,7 +15,7 @@ plot_top_currencies(currency = "USD", k = 5)
 A ggplot of top Cryptocurrencies based on their rank
 }
 \description{
-To plot Top Cryptocurrencies
+Plot The Price of the Largest Market Cap Cryptocurrencies
 }
 \examples{
 plot_top_currencies('EUR')

@@ -1,7 +1,22 @@
-currencies_list <- c("AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", 
-  "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", 
-  "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", 
-  "TRY", "TWD", "ZAR", "USD")
+#' Get Valid Currencies
+#' @return A character vector of valid currencies supported by coinmarketcap API
+#' @examples
+#' get_valid_currenices()
+#' @export
+get_valid_currencies <- function(){
+
+        currencies_list <- c("AUD", "BRL", "CAD", "CHF",
+                             "CLP", "CNY", "CZK", "DKK",
+                             "EUR", "GBP", "HKD", "HUF",
+                             "IDR", "ILS", "INR", "JPY",
+                             "KRW", "MXN", "MYR", "NOK",
+                              "NZD", "PHP", "PKR", "PLN",
+                              "RUB", "SEK", "SGD", "THB",
+                             "TRY", "TWD", "ZAR", "USD")
+
+        return(currencies_list)
+}
+
 
 
 #' Extract Global Market Cap of Cryptocurrency Market
@@ -38,11 +53,11 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
   stopifnot(currency %in% currencies_list)
 
   data.frame(fromJSON(getURL(
-    paste0('https://api.coinmarketcap.com/v1/ticker/?convert=', currency, 
+    paste0('https://api.coinmarketcap.com/v1/ticker/?convert=', currency,
            '&limit=0'))))
 }
 
-#' Plot The Price of the Largest Market Cap Cryptocurrencies 
+#' Plot The Price of the Largest Market Cap Cryptocurrencies
 #'
 #' @param currency currency code - Default is 'USD'
 #' @param k the number of top cryptocurrencies to plot (default is 5)
@@ -61,14 +76,14 @@ plot_top_currencies <- function(currency = 'USD', k = 5) {
   k <- as.integer(k)
   if (k < 1) {
     stop("Parameter k must be a integer value greater than zero.")
-  } 
+  }
 
   temp <- data.frame(fromJSON(getURL(
     paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency))))
 
   if (k > nrow(temp)) {
     warning(paste0("The argument provided to k is greater than the number ",
-                   "of cryptocurrencies. Only ", nrow(temp), 
+                   "of cryptocurrencies. Only ", nrow(temp),
                    " will be plotted."))
   }
 

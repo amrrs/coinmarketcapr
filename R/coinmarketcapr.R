@@ -67,7 +67,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 #' plot_top_currencies('GBP')
 #' @importFrom jsonlite fromJSON
 #' @importFrom RCurl getURL
-#' @importFrom ggplot2 ggplot aes_string geom_bar
+#' @importFrom ggplot2 ggplot aes_string geom_bar xlab ylab ggtitle coord_flip
 #' @export
 plot_top_currencies <- function(currency = 'USD', k = 5) {
 
@@ -89,7 +89,13 @@ plot_top_currencies <- function(currency = 'USD', k = 5) {
 
   temp <- temp[seq_len(min(k, nrow(temp))), ]
 
-  ggplot(temp, aes_string('name','price_usd')) + geom_bar(stat = 'identity')
+  temp[,tolower(paste0('price_',currency))] <- round(as.numeric(temp[,tolower(paste0('price_',currency))]),2)
+  ggplot(temp, aes_string('name',tolower(paste0('price_',currency)))) +
+          geom_bar(stat = 'identity') +
+          ylab(paste0('Price in ',currency)) +
+          xlab('Cryptocurrencies') +
+          ggtitle(paste0('Top ',k,' Cryptocurrencies with Largest Marketcaps')) +
+          coord_flip()
 }
 
 

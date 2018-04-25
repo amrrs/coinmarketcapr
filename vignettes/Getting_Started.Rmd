@@ -38,14 +38,14 @@ get_valid_currencies()
 
 ### Getting Global Marketcap
 
-This function `get_global_marketcap()` fetches the USD value of global marketcap of all cryptocurrenices.
+This function `get_global_marketcap()` fetches the USD value of global marketcap of all cryptocurrencies.
 
 ```{r}
 library(coinmarketcapr)
 get_global_marketcap()
 ```
 
-### Extracting all Cryptocurrenices 
+### Extracting all Cryptocurrencies 
 
 This function `get_marketcap_ticker_all()` gets various useful values such as Price, Marketcap, Total Volume, 24-hour Change and much for all the cryptocurrencies. 
 

@@ -31,7 +31,7 @@ get_valid_currencies <- function(){
 #' @export
 get_global_marketcap <- function(currency = 'USD') {
 
-  stopifnot(currency %in% currencies_list)
+  stopifnot(currency %in% get_valid_currencies())
 
   data.frame(fromJSON(getURL(
     paste0('https://api.coinmarketcap.com/v1/global/?convert=',currency))))
@@ -50,7 +50,7 @@ get_global_marketcap <- function(currency = 'USD') {
 #' @export
 get_marketcap_ticker_all <- function(currency = 'USD') {
 
-  stopifnot(currency %in% currencies_list)
+  stopifnot(currency %in% get_valid_currencies())
 
   data.frame(fromJSON(getURL(
     paste0('https://api.coinmarketcap.com/v1/ticker/?convert=', currency,
@@ -71,7 +71,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 #' @export
 plot_top_currencies <- function(currency = 'USD', k = 5) {
 
-  stopifnot(currency %in% currencies_list)
+  stopifnot(currency %in% get_valid_currencies())
 
   k <- as.integer(k)
   if (k < 1) {

@@ -21,9 +21,20 @@ This vignette is to help you get started with Coinmarketcapr Package that helps 
 
 This package contains three primary functions:
 
+- `get_valid_currencies()`
 - `get_global_marketcap()`
 - `get_marketcap_ticker_all()`
 - `plot_top_currencies()`
+
+### Getting Valid Currrenices 
+
+This function `get_valid_currencies()` lists a character vector with all the valid currencies (ISO Codes) supported by Coinmarketcap API. These currency codes can be used in other functions like `get_global_marketcap()` to extract values in the given currency. 
+
+```{r}
+library(coinmarketcapr)
+get_valid_currencies()
+```
+
 
 ### Getting Global Marketcap
 

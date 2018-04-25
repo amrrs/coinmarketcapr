@@ -1,7 +1,7 @@
 #' Get Valid Currencies
 #' @return A character vector of valid currencies supported by coinmarketcap API
 #' @examples
-#' get_valid_currenices()
+#' get_valid_currencies()
 #' @export
 get_valid_currencies <- function(){
 

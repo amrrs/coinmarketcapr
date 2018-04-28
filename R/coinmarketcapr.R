@@ -17,8 +17,6 @@ get_valid_currencies <- function(){
         return(currencies_list)
 }
 
-
-
 #' Extract Global Market Cap of Cryptocurrency Market
 #'
 #' @param currency currency code - Default is 'USD'

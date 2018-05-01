@@ -4,12 +4,14 @@
 \alias{plot_top_currencies}
 \title{Plot The Price of the Largest Market Cap Cryptocurrencies}
 \usage{
-plot_top_currencies(currency = "USD", k = 5)
+plot_top_currencies(currency = "USD", k = 5, bar_color = "grey")
 }
 \arguments{
-\item{currency}{currency code - Default is 'USD'}
+\item{currency}{currency code (default is 'USD')}
 
 \item{k}{the number of top cryptocurrencies to plot (default is 5)}
+
+\item{bar_color}{a valid color name or hexadecimal color code (default is 'grey')}
 }
 \value{
 A ggplot of top Cryptocurrencies based on their rank (Market Cap)

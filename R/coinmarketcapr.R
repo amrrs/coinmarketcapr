@@ -57,8 +57,9 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 
 #' Plot The Price of the Largest Market Cap Cryptocurrencies
 #'
-#' @param currency currency code - Default is 'USD'
+#' @param currency currency code (default is 'USD')
 #' @param k the number of top cryptocurrencies to plot (default is 5)
+#' @param bar_color a valid color name or hexadecimal color code (default is 'grey')
 #' @return A ggplot of top Cryptocurrencies based on their rank (Market Cap)
 #' @examples
 #' plot_top_currencies('EUR')
@@ -67,7 +68,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 #' @importFrom RCurl getURL
 #' @importFrom ggplot2 ggplot aes_string geom_bar xlab ylab ggtitle coord_flip
 #' @export
-plot_top_currencies <- function(currency = 'USD', k = 5) {
+plot_top_currencies <- function(currency = 'USD', k = 5, bar_color = 'grey') {
 
   stopifnot(currency %in% get_valid_currencies())
 
@@ -89,7 +90,7 @@ plot_top_currencies <- function(currency = 'USD', k = 5) {
 
   temp[,tolower(paste0('price_',currency))] <- round(as.numeric(temp[,tolower(paste0('price_',currency))]),2)
   ggplot(temp, aes_string('name',tolower(paste0('price_',currency)))) +
-          geom_bar(stat = 'identity') +
+          geom_bar(stat = 'identity', fill = bar_color) +
           ylab(paste0('Price in ',currency)) +
           xlab('Cryptocurrencies') +
           ggtitle(paste0('Top ',k,' Cryptocurrencies with Largest Marketcaps')) +

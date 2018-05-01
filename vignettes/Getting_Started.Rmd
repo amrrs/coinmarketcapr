@@ -64,6 +64,23 @@ library(coinmarketcapr)
 plot_top_currencies('USD',5)
 ```
 
+### Cryptocurrencies Market - Tidy Analysis
+
+Since `coinmarketcapr`'s `get_marketcap_ticker_all()` returns a dataframe, it could be fit in alongside with Tidy Data pipeline. 
+
+```{r, fig.cap='Plotting Top 5 Cryptocurrencies', fig.width=6, fig.height=6}
+library(coinmarketcapr)
+library(dplyr)
+library(ggplot2)
+
+get_marketcap_ticker_all() %>% 
+        slice(1:30) %>% 
+        mutate(price_usd = as.numeric(price_usd)) %>% 
+        ggplot() + geom_histogram(aes(price_usd)) +
+        ggtitle('Cryptocurrencies Price in USD Histogram')
+```
+
+
 ### Courtesy
 
 Coinmarketcapr is powered by Coinmarketcap.com <https://coinmarketcap.com/api/> 

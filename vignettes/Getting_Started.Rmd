@@ -64,11 +64,22 @@ library(coinmarketcapr)
 plot_top_currencies('USD',5)
 ```
 
+### Plotting with Themes
+
+`plot_top_currencies()` outputs a `ggplot` object hence using `+` operator a new ggplot2 theme can be applied. `ggthemes` package has got a rich set of out-of-box themes to use with. 
+
+
+```{r, fig.cap='Plot with Themes', fig.width=6, fig.height=6}
+
+plot_top_currencies() + 
+        ggthemes::theme_economist()
+```
+
 ### Cryptocurrencies Market - Tidy Analysis
 
 Since `coinmarketcapr`'s `get_marketcap_ticker_all()` returns a dataframe, it could be fit in alongside with Tidy Data pipeline. 
 
-```{r, fig.cap='Plotting Top 5 Cryptocurrencies', fig.width=6, fig.height=6}
+```{r, fig.cap='Cryptocurrencies Price in USD Histogram', fig.width=6, fig.height=6}
 library(coinmarketcapr)
 library(dplyr)
 library(ggplot2)

@@ -70,9 +70,9 @@ plot_top_currencies('USD',5)
 
 
 ```{r, fig.cap='Plot with Themes', fig.width=6, fig.height=6}
-
+library(ggthemes)
 plot_top_currencies() + 
-        ggthemes::theme_economist()
+        theme_economist()
 ```
 
 ### Cryptocurrencies Market - Tidy Analysis

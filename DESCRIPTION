@@ -10,9 +10,12 @@ LazyData: true
 Imports: jsonlite,
     ggplot2,
     RCurl
-Suggests: testthat,
+Suggests: 
+    testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggthemes,
+    dplyr
 RoxygenNote: 6.0.1
 VignetteBuilder: knitr
 BugReports: https://github.com/amrrs/coinmarketcapr/issues

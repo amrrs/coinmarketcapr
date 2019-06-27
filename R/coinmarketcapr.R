@@ -25,14 +25,17 @@ get_valid_currencies <- function(){
 #' get_global_marketcap('AUD')
 #' get_global_marketcap('EUR')
 #' @importFrom jsonlite fromJSON
-#' @importFrom RCurl getURL
+#' @importFrom curl curl_fetch_memory
 #' @export
 get_global_marketcap <- function(currency = 'USD') {
 
   stopifnot(currency %in% get_valid_currencies())
 
-  data.frame(fromJSON(getURL(
-    paste0('https://api.coinmarketcap.com/v1/global/?convert=',currency))))
+  d <- data.frame(fromJSON(rawToChar(curl_fetch_memory(
+    paste0('https://api.coinmarketcap.com/v1/global/?convert=',currency))$content)))
+
+  d$last_updated  <- as.POSIXct(as.numeric(d$last_updated), origin = as.Date("1970-01-01"))
+  d
 }
 
 
@@ -44,15 +47,19 @@ get_global_marketcap <- function(currency = 'USD') {
 #' get_marketcap_ticker_all('EUR')
 #' get_marketcap_ticker_all('GBP')
 #' @importFrom jsonlite fromJSON
-#' @importFrom RCurl getURL
+#' @importFrom curl curl_fetch_memory
 #' @export
 get_marketcap_ticker_all <- function(currency = 'USD') {
 
   stopifnot(currency %in% get_valid_currencies())
 
-  data.frame(fromJSON(getURL(
+  d <- data.frame(fromJSON(rawToChar(curl_fetch_memory(
     paste0('https://api.coinmarketcap.com/v1/ticker/?convert=', currency,
-           '&limit=0'))))
+           '&limit=0'))$content)))
+
+  d[,4:15] <- apply(d[,4:15], 2, function(x) as.numeric(as.character(x)))
+  d$last_updated  <- as.POSIXct(d$last_updated, origin = as.Date("1970-01-01"))
+  d
 }
 
 #' Plot The Price of the Largest Market Cap Cryptocurrencies
@@ -65,7 +72,7 @@ get_marketcap_ticker_all <- function(currency = 'USD') {
 #' plot_top_currencies('EUR')
 #' plot_top_currencies('GBP')
 #' @importFrom jsonlite fromJSON
-#' @importFrom RCurl getURL
+#' @importFrom curl curl_fetch_memory
 #' @importFrom ggplot2 ggplot aes_string geom_bar xlab ylab ggtitle coord_flip
 #' @export
 plot_top_currencies <- function(currency = 'USD', k = 5, bar_color = 'grey') {
@@ -77,8 +84,8 @@ plot_top_currencies <- function(currency = 'USD', k = 5, bar_color = 'grey') {
     stop("Parameter k must be a integer value greater than zero.")
   }
 
-  temp <- data.frame(fromJSON(getURL(
-    paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency))))
+  temp <- data.frame(fromJSON(rawToChar(curl_fetch_memory(
+    paste0('https://api.coinmarketcap.com/v1/ticker/?convert=',currency))$content)))
 
   if (k > nrow(temp)) {
     warning(paste0("The argument provided to k is greater than the number ",

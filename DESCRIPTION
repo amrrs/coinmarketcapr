@@ -1,7 +1,7 @@
 Package: coinmarketcapr
 Type: Package
 Title: Get Cryptocurrencies Market Cap Prices from Coin Market Cap
-Version: 0.1
+Version: 0.2
 Authors@R: c(
     person("AbdulMajedRaja","RS", email = "amrrs.data@gmail.com", role = "cre"), 
     person("Sebastian","Gatscha", email = "sebastian_gatscha@gmx.at", role = "ctb")

@@ -1,10 +1,10 @@
 ## Resubmission
 
-This is a resubmission. In this version, I have updated the DESCRIPTION to fix the Caps and reference URL.
+This is a new submission. In this version, A Package dependency has been changed. 
 
 ## Test environments
 
-* Local OS X install: R 3.4.0
+* Local OS X install: R 3.5.1
 * Ubuntu 14.04 (on Travis-CI): R 3.4.0
 * Win-builder: R-devel and R-release
 

@@ -21,4 +21,9 @@ context('plot_top_currencies Output ggplot Check')
 test_that("The output ggplot Type is ",{
   expect_true(is.ggplot(plot_top_currencies('USD')))
   expect_true(is.ggplot(plot_top_currencies()))
+
+
+  expect_error(plot_top_currencies(k = 0))
+  expect_warning(plot_top_currencies(k = 10000))
+
 })

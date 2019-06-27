@@ -1,6 +1,6 @@
 ## Resubmission
 
-This is a new submission. In this version, A Package dependency has been changed. 
+This is a resubmission. In this version, The invalid URLs - which aren't invalid though and author name fixed. 
 
 ## Test environments
 

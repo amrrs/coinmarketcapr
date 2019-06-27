@@ -1,6 +1,6 @@
 ## Resubmission
 
-This is a resubmission. In this version, The invalid URLs - which aren't invalid though and author name fixed. 
+This is a resubmission. In this version, the URL is completed. 
 
 ## Test environments
 

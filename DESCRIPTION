@@ -9,13 +9,14 @@ License: MIT + file LICENSE
 LazyData: true
 Imports: jsonlite,
     ggplot2,
-    RCurl
+    curl
 Suggests: 
     testthat,
     knitr,
     rmarkdown,
     ggthemes,
     dplyr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 VignetteBuilder: knitr
+Encoding: UTF-8
 BugReports: https://github.com/amrrs/coinmarketcapr/issues

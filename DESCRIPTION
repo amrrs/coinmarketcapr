@@ -12,7 +12,10 @@ License: MIT + file LICENSE
 LazyData: true
 Imports: jsonlite,
     ggplot2,
-    curl
+    data.table,
+    curl,
+    cli,
+    crayon
 Suggests: 
     testthat,
     knitr,

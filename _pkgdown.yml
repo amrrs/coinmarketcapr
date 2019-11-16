@@ -5,18 +5,31 @@ template:
     bootswatch: cerulean
 
 reference:
-  - title: Build
-    desc:  Build each component of the site.
+  - title: Setup
+    desc: Setup the API-key and the Base-URL for Coinmarketcap.
     contents:
-    - starts_with("build_")
-  - title: Templates
+    - setup
+    - get_setup
+    - reset_setup
+  - title: Cryptocurrencies
+    desc: Get data from the "Cryptocurrencies" endpoints. https://coinmarketcap.com/api/documentation/v1/#tag/cryptocurrency
     contents:
-    - template_navbar
-    - render_page
-  - title: Helpers
+    - get_valid_currencies
+    - get_crypto_map
+    - get_crypto_meta
+    - get_crypto_listings
+    - get_crypto_quotes
+    - get_crypto_marketpairs
+    - get_crypto_ohlcv
+  - title: Global Metrics
+    desc: Get data from the "Global-metrics" endpoints. https://coinmarketcap.com/api/documentation/v1/#tag/global-metrics
     contents:
-    - autolink_html
-    - clean_site
-    - as_pkgdown
-    - in_pkgdown
-    - rel_path
+    - get_global_marketcap
+  - title: Exchanges
+    desc: Get data from the "Exchange" endpoints. https://coinmarketcap.com/api/documentation/v1/#tag/exchange
+    contents:
+    - get_exchange_map
+    - get_exchange_meta
+  - title: Plotting
+    contents:
+    - plot_top_currencies

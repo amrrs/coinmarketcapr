@@ -40,7 +40,7 @@ Also note that, `coinmarketcapr` connects with Coinmarketcap API, hence it requi
 What's happening
 ----------------
 
-Inside this `coinmarketcapr` package, The function that you call from `coinmarketcapr` connects with the Coinmarketcap API using `curl` (via Internet) and retreives the required data in the form a `json` file which is then parsed with `jsonlite` and then flattened/converted to a dataframe and stored in your R Environment in the given variable name. 
+Inside this `coinmarketcapr` package, the function that you call from `coinmarketcapr` connects with the Coinmarketcap API using `curl` (via Internet) and retreives the required data in the form a `json` file which is then parsed with `jsonlite` and then flattened/converted to a dataframe and stored in your R Environment in the given variable name. 
 
 Getting started
 ---------------
@@ -121,11 +121,11 @@ Output:
 
 Code of Conduct
 ---------------
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](https://github.com/amrrs/coinmarketcapr/blob/master/CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 Contribution
 ---------------
-Please feel free to report [issues](https://github.com/amrrs/coinmarketcapr/issues/new), comments, or feature requests. Please check out our [Contributing guidelines](CONTRIBUTING.md) before raising an issue or Pull Request. 
+Please feel free to report [issues](https://github.com/amrrs/coinmarketcapr/issues/new), comments, or feature requests. Please check out our [Contributing guidelines](https://github.com/amrrs/coinmarketcapr/blob/master/CONTRIBUTING.md) before raising an issue or Pull Request. 
 
 Courtesy
 ---------------

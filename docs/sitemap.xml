@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/index.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/coinmarketcapr.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_global_marketcap.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_marketcap_ticker_all.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_valid_currencies.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/plot_top_currencies.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/articles/Getting_Started.html</loc>
+  </url>
+</urlset>

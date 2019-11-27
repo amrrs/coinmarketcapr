@@ -1,10 +1,9 @@
 Package: coinmarketcapr
 Type: Package
 Title: Get Cryptocurrencies Market Cap Prices from Coin Market Cap
-Version: 0.1
+Version: 0.2
 Authors@R: c(
-    person("AbdulMajedRaja","RS", email = "amrrs.data@gmail.com", role = "cre"), 
-    person("Srivathsan","K", email = "srivibish@gmail.com", role = "aut"), 
+    person("AbdulMajedRaja","RS", email = "amrrs.data@gmail.com", role = c("aut", "cre")), 
     person("Sebastian","Gatscha", email = "sebastian_gatscha@gmx.at", role = "ctb")
     )
 Description: Extract and monitor price and market cap of 'Cryptocurrencies' from 'Coin Market Cap' <https://coinmarketcap.com/api/>. 
@@ -13,7 +12,10 @@ License: MIT + file LICENSE
 LazyData: true
 Imports: jsonlite,
     ggplot2,
-    curl
+    data.table,
+    curl,
+    cli,
+    crayon
 Suggests: 
     testthat,
     knitr,

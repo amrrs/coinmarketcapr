@@ -17,9 +17,10 @@ get_marketcap_ticker_all is replaced by \code{\link[coinmarketcapr]{get_crypto_l
 support the new API and more functionality.
 }
 \examples{
+\dontrun{
 get_marketcap_ticker_all('EUR')
 get_marketcap_ticker_all('GBP')
-
+}
 }
 \seealso{
 Other Cryptocurrencies: \code{\link{get_crypto_listings}},

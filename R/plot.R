@@ -6,9 +6,10 @@
 #' @param bar_color a valid color name or hexadecimal color code (default is 'grey')
 #' @return A ggplot of top Cryptocurrencies based on their rank (Market Cap)
 #' @family Plotting
-#' @examples
+#' @examples \dontrun{
 #' plot_top_currencies('EUR')
 #' plot_top_currencies('GBP')
+#' }
 #' @export
 plot_top_currencies <- function(currency = "USD", k = 5, bar_color = "grey") {
 
@@ -19,9 +20,11 @@ plot_top_currencies <- function(currency = "USD", k = 5, bar_color = "grey") {
         stop(cat(crayon::red(cli::symbol$cross,
                              "Parameter k must be a integer value greater than zero.\n")))
 
-    temp <- data.frame(fromJSON(rawToChar(curl_fetch_memory(
+    temp <- curl_fetch_memory(
         paste0("https://api.coinmarketcap.com/v1/ticker/?convert=",
-               currency))$content)))
+               currency))
+    check_response(temp)
+    temp <- data.frame(fromJSON(rawToChar(temp$content)))
 
     if (k > nrow(temp))
         warning(cat(crayon::yellow(cli::symbol$warning,

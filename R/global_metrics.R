@@ -23,9 +23,12 @@ get_global_marketcap <- function(currency = "USD", latest = TRUE, ...) {
     apikey <- .get_api_key()
     ## Using old API ? ############
     if (is.null(apikey)) {
-        d <- data.frame(fromJSON(rawToChar(curl_fetch_memory(
+        d <- curl_fetch_memory(
             paste0("https://api.coinmarketcap.com/v1/global/?convert=",
-                   currency))$content)))
+                   currency))
+        check_response(d)
+        d <- data.frame(fromJSON(rawToChar(d$content)))
+
         d$last_updated  <- as.POSIXct(as.numeric(d$last_updated),
                                       origin = as.Date("1970-01-01"))
         return(d)

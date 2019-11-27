@@ -6,7 +6,9 @@ sleeptime = 10
 ## No-API #####################
 context("No API")
 test_that("No API",{
+    skip_on_cran()
     reset_setup()
+    coinmarketcapr::setup()
     expect_error(get_exchange_map())
     expect_error(get_exchange_meta(id = 1))
     expect_error(get_crypto_map())
@@ -18,19 +20,20 @@ test_that("No API",{
     expect_error(make_request())
 
     ## get_crypto_listings ##################
-    res <- expect_warning(get_crypto_listings())
+    res <- get_crypto_listings()
     expect_is(res, "data.frame")
 
     ## get_global_marketcap ##################
-    res <- expect_warning(get_global_marketcap('AUD'))
+    res <- get_global_marketcap('AUD')
     expect_is(res, "data.frame")
 })
 
 ## Utils #####################
 context("Utils")
 test_that("Utils",{
+    skip_on_cran()
     reset_setup()
-    setup("someinvalidkey")
+    coinmarketcapr::setup("someinvalidkey")
     res <- get_setup()
     expect_is(res, "list")
     expect_true(length(res) == 2)
@@ -39,7 +42,8 @@ test_that("Utils",{
 ## Free-API #####################
 context("Global-Metrics")
 test_that("Global-Metrics - Free API",{
-    setup('71618174-fd24-4c8f-8c94-83bc3e1cd68e')
+    skip_on_cran()
+    coinmarketcapr::setup('71618174-fd24-4c8f-8c94-83bc3e1cd68e')
 
     ## get_global_marketcap ##################
     res <- get_global_marketcap("EUR")
@@ -58,6 +62,7 @@ test_that("Global-Metrics - Free API",{
 
 context("Cryptocurrencies - Free API")
 test_that("Cryptocurrencies - Free API",{
+    skip_on_cran()
     coinmarketcapr::setup('71618174-fd24-4c8f-8c94-83bc3e1cd68e')
 
     ## get_crypto_map ####################
@@ -169,6 +174,7 @@ test_that("Cryptocurrencies - Free API",{
 
 context('Plots')
 test_that("Plots ",{
+    skip_on_cran()
     expect_true(is.ggplot(plot_top_currencies('USD')))
     Sys.sleep(sleeptime)
 
@@ -186,6 +192,7 @@ test_that("Plots ",{
 ## Pro-API #####################
 context("Cryptocurrencies - Pro API")
 test_that("Cryptocurrencies - Pro API (Sandbox)",{
+    skip_on_cran()
     coinmarketcapr::setup('5ca3ffee-dbb9-4dff-8f09-e1a9128dfa26', sandbox = TRUE)
 
     ## get_global_marketcap ####################
@@ -199,7 +206,8 @@ test_that("Cryptocurrencies - Pro API (Sandbox)",{
     Sys.sleep(sleeptime)
 
     ## get_crypto_listings ####################
-    date <- Sys.Date()-35
+    past <- 95
+    date <- Sys.Date()-past
     res <- get_crypto_listings("GBP", latest = F, start = 1,
                                date = date, limit = 10,
                                sort = "price", sort_dir = "asc")
@@ -207,7 +215,7 @@ test_that("Cryptocurrencies - Pro API (Sandbox)",{
     expect_true(nrow(res) == 10)
     Sys.sleep(sleeptime)
 
-    date <- format(Sys.Date()-35, "%Y-%m-%dT%H:%M:%S.000Z")
+    date <- format(Sys.Date()-past, "%Y-%m-%dT%H:%M:%S.000Z")
     res <- get_crypto_listings("GBP", latest = F, start = 1,
                         date = date, limit = 10,
                         sort = "price", sort_dir = "asc")
@@ -263,20 +271,20 @@ test_that("Cryptocurrencies - Pro API (Sandbox)",{
     expect_true(nrow(res) == 1)
     Sys.sleep(sleeptime)
 
-    date <- format(Sys.Date()-35, "%Y-%m-%dT%H:%M:%S.000Z")
+    date <- format(Sys.Date()-past, "%Y-%m-%dT%H:%M:%S.000Z")
     res <- get_crypto_ohlcv(latest = F, id = 1, time_start = date)
     expect_is(res, "data.frame")
     expect_true(nrow(res) > 1)
     Sys.sleep(sleeptime)
 
-    date <- format(Sys.Date()-35, "%Y-%m-%dT%H:%M:%S.000Z")
+    date <- format(Sys.Date()-past, "%Y-%m-%dT%H:%M:%S.000Z")
     res <- get_crypto_ohlcv(latest = F, symbol = "BTC", time_start = date)
     expect_is(res, "data.frame")
     expect_true(nrow(res) > 1)
     Sys.sleep(sleeptime)
 
-    date <- format(Sys.Date()-35, "%Y-%m-%dT%H:%M:%S.000Z")
-    dateend <- format(Sys.Date()-30, "%Y-%m-%dT%H:%M:%S.000Z")
+    date <- format(Sys.Date()-past-5, "%Y-%m-%dT%H:%M:%S.000Z")
+    dateend <- format(Sys.Date()-past, "%Y-%m-%dT%H:%M:%S.000Z")
     res <- get_crypto_ohlcv(latest = F, symbol = "BTC",
                      time_start = date, time_end = dateend,
                      time_period = "hourly", interval = "hourly",
@@ -309,7 +317,8 @@ test_that("Cryptocurrencies - Pro API (Sandbox)",{
 
 context("Exchanges - Pro API")
 test_that("Exchanges - Pro API (Sandbox)",{
-    setup('5ca3ffee-dbb9-4dff-8f09-e1a9128dfa26', sandbox = TRUE)
+    skip_on_cran()
+    coinmarketcapr::setup('5ca3ffee-dbb9-4dff-8f09-e1a9128dfa26', sandbox = TRUE)
 
     ## get_exchange_map ####################
     res <- get_exchange_map()

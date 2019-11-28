@@ -43,7 +43,7 @@ The function `get_global_marketcap()` fetches the USD value of global marketcap 
 ```{r}
 library(coinmarketcapr)
 coinmarketcapr::setup()
-get_global_marketcap()
+invisible(capture.output(get_global_marketcap()))
 ```
 
 ### Extracting all Cryptocurrencies 
@@ -52,7 +52,8 @@ The function `get_crypto_listings()` gets various useful values such as Price, M
 
 ```{r}
 library(coinmarketcapr)
-names(get_crypto_listings())
+invisible(capture.output(names(get_crypto_listings())))
+
 ```
 
 

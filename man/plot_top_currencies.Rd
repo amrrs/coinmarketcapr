@@ -20,7 +20,9 @@ A ggplot of top Cryptocurrencies based on their rank (Market Cap)
 Plot The Price of the Largest Market Cap Cryptocurrencies
 }
 \examples{
+\dontrun{
 plot_top_currencies('EUR')
 plot_top_currencies('GBP')
+}
 }
 \concept{Plotting}

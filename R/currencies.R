@@ -137,9 +137,11 @@ get_crypto_listings <- function(currency = "USD", latest = TRUE, ...) {
     apikey <- .get_api_key()
     ## Using old API
     if (is.null(apikey)) {
-        d <- data.frame(fromJSON(rawToChar(curl_fetch_memory(
-            paste0("https://api.coinmarketcap.com/v1/ticker/?convert=",
-                   currency, "&limit=0"))$content)))
+        d <- curl_fetch_memory(
+          paste0("https://api.coinmarketcap.com/v1/ticker/?convert=",
+                 currency, "&limit=0"))
+        check_response(d)
+        d <- data.frame(fromJSON(rawToChar(d$content)))
 
         d[, 4:15] <- apply(d[, 4:15], 2, function(x)
             as.numeric(as.character(x)))
@@ -187,10 +189,10 @@ get_crypto_listings <- function(currency = "USD", latest = TRUE, ...) {
 #' @family Cryptocurrencies
 #' @keywords internal
 #'
-#' @examples
+#' @examples \dontrun{
 #' get_marketcap_ticker_all('EUR')
 #' get_marketcap_ticker_all('GBP')
-#'
+#' }
 #' @export
 get_marketcap_ticker_all <- function(currency = 'USD') {
   .Deprecated(

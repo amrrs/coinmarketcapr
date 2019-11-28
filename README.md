@@ -31,6 +31,9 @@ Dependencies
 * jsonlite
 * curl
 * ggplot2
+* data.table
+* cli
+* crayon
 
 Hence, these packages will be automatically installed while installing `coinmarketcapr`.
 
@@ -40,21 +43,30 @@ Also note that, `coinmarketcapr` connects with Coinmarketcap API, hence it requi
 What's happening
 ----------------
 
-Inside this `coinmarketcapr` package, the function that you call from `coinmarketcapr` connects with the Coinmarketcap API using `curl` (via Internet) and retreives the required data in the form a `json` file which is then parsed with `jsonlite` and then flattened/converted to a dataframe and stored in your R Environment in the given variable name. 
+Inside this `coinmarketcapr` package, the function that you call from `coinmarketcapr` connects with the Coinmarketcap API using `curl` (via Internet) and receives the required data in the form a `json` file which is then parsed with `jsonlite` and then flattened/converted to a dataframe and stored in your R Environment in the given variable name. 
 
 Getting started
 ---------------
 
-``` r
-library(coinmarketcapr)
-latest_marketcap <- get_global_marketcap('EUR')
-```
-
 ```coinmarketcapr``` can be loaded just like any other R-package with ```library(coinmarketcapr)```.
 
-**Note:** `coinmarketcapr` package requires internet connection to function. If you're trying this behind a Firewall, you might get:
-```Error in open.connection(con, "rb") : Timeout was reached```
-To resolve this error, Please refer this link: [Configuring R to Use an HTTP or HTTPS Proxy](https://support.rstudio.com/hc/en-us/articles/200488488-Configuring-R-to-Use-an-HTTP-or-HTTPS-Proxy)
+**Note:** `coinmarketcapr` package requires an active internet connection. If you're trying this behind a Firewall, you might get:
+```Error in open.connection(con, "rb") : Timeout was reached```.
+To resolve this error, please refer this link: [Configuring R to Use an HTTP or HTTPS Proxy](https://support.rstudio.com/hc/en-us/articles/200488488-Configuring-R-to-Use-an-HTTP-or-HTTPS-Proxy)
+
+The package allows to use the following functions **without an API key**:
+
+* `get_global_marketcap`
+* `get_crypto_listings` or previously `get_marketcap_ticker_all`
+* `plot_top_currencies`
+* `get_valid_currencies`
+
+All other functions require an **existing API-key**, which can be acquired at the [Signup](https://pro.coinmarketcap.com/signup/) page.
+For more information about the Pricing models, visit [Pricing](https://coinmarketcap.com/api/pricing/)
+and about further Authentication details visit [Authentication](https://coinmarketcap.com/api/documentation/v1/#section/Authentication).
+
+
+
 
 Examples
 ---------------

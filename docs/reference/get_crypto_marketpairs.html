@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deprecated use <code><a href='get_crypto_listings.html'>get_crypto_listings</a></code> instead. — get_marketcap_ticker_all • coinmarketcapr</title>
+<title>List all active market pairs — get_crypto_marketpairs • coinmarketcapr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,10 +30,10 @@
 
 
 
-<meta property="og:title" content="Deprecated use <code><a href='get_crypto_listings.html'>get_crypto_listings</a></code> instead. — get_marketcap_ticker_all" />
+<meta property="og:title" content="List all active market pairs — get_crypto_marketpairs" />
 
-<meta property="og:description" content="get_marketcap_ticker_all is replaced by get_crypto_listings to
-support the new API and more functionality." />
+<meta property="og:description" content="Get a list of all active market pairs that CoinMarketCap tracks for a
+given cryptocurrency or fiat currency" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,19 +112,20 @@ support the new API and more functionality." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Deprecated use <code><a href='get_crypto_listings.html'>get_crypto_listings</a></code> instead.</h1>
+    <h1>List all active market pairs</h1>
     <small class="dont-index">Source: <a href='https://github.com/amrrs/coinmarketcapr/blob/master/R/currencies.R'><code>R/currencies.R</code></a></small>
-    <div class="hidden name"><code>get_marketcap_ticker_all.Rd</code></div>
+    <div class="hidden name"><code>get_crypto_marketpairs.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>get_marketcap_ticker_all is replaced by <code><a href='get_crypto_listings.html'>get_crypto_listings</a></code> to
-support the new API and more functionality.</p>
+    <p>Get a list of all active market pairs that CoinMarketCap tracks for a
+given cryptocurrency or fiat currency</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_marketcap_ticker_all</span>(<span class='kw'>currency</span> <span class='kw'>=</span> <span class='st'>"USD"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_crypto_marketpairs</span>(<span class='kw'>currency</span> <span class='kw'>=</span> <span class='st'>"USD"</span>, <span class='kw'>symbol</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>slug</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>start</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,27 +134,63 @@ support the new API and more functionality.</p>
       <th>currency</th>
       <td><p>currency code - Default is 'USD'</p></td>
     </tr>
+    <tr>
+      <th>symbol</th>
+      <td><p>One or more cryptocurrency symbols.
+Example: c("BTC","ETH").</p></td>
+    </tr>
+    <tr>
+      <th>id</th>
+      <td><p>Alternatively pass one or more CoinMarketCap cryptocurrency IDs.
+Example: c(1,2)</p></td>
+    </tr>
+    <tr>
+      <th>slug</th>
+      <td><p>Alternatively pass a vector of exchange slugs.
+Example: c("binance","cryptsy")</p></td>
+    </tr>
+    <tr>
+      <th>start</th>
+      <td><p>Optionally offset the start (1-based index) of the paginated
+list of items to return. - Default is 1</p></td>
+    </tr>
+    <tr>
+      <th>limit</th>
+      <td><p>Optionally specify the number of results to return.
+Use this parameter and the "start" parameter to determine your own
+pagination size.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe of top Cryptocurrencies with id, name, symbol, rank, price_usd, price_btc, 24h_volume_usd, market_cap_usd, available_supply, total_supply, percent_change_1h, percent_change_24h, percent_change_7d, last_updated</p>
+    <p>A dataframe with all active market pairs</p>
+    
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>A single cryptocurrency "id", "slug", or "symbol" is required.</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyMarketpairsLatest'>API documentation</a></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other Cryptocurrencies: <code><a href='get_crypto_listings.html'>get_crypto_listings</a></code>,
   <code><a href='get_crypto_map.html'>get_crypto_map</a></code>,
-  <code><a href='get_crypto_marketpairs.html'>get_crypto_marketpairs</a></code>,
   <code><a href='get_crypto_meta.html'>get_crypto_meta</a></code>,
   <code><a href='get_crypto_ohlcv.html'>get_crypto_ohlcv</a></code>,
   <code><a href='get_crypto_quotes.html'>get_crypto_quotes</a></code>,
+  <code><a href='get_marketcap_ticker_all.html'>get_marketcap_ticker_all</a></code>,
   <code><a href='get_valid_currencies.html'>get_valid_currencies</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>get_marketcap_ticker_all</span>(<span class='st'>'EUR'</span>)
-<span class='fu'>get_marketcap_ticker_all</span>(<span class='st'>'GBP'</span>)
+<span class='fu'>get_crypto_marketpairs</span>(<span class='st'>"EUR"</span>)
+<span class='fu'>get_crypto_marketpairs</span>(<span class='st'>"EUR"</span>, <span class='kw'>slug</span> <span class='kw'>=</span> <span class='st'>"bitcoin"</span>)
+<span class='fu'>get_crypto_marketpairs</span>(<span class='st'>"EUR"</span>, <span class='kw'>symbol</span> <span class='kw'>=</span> <span class='st'>"LTC"</span>)
+<span class='fu'>get_crypto_marketpairs</span>(<span class='st'>"EUR"</span>, <span class='kw'>symbol</span> <span class='kw'>=</span> <span class='st'>"BTC"</span>, <span class='kw'>start</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>20</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -162,6 +199,10 @@ support the new API and more functionality.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#note">Note</a></li>
+
+      <li><a href="#references">References</a></li>
 
       <li><a href="#see-also">See also</a></li>
       

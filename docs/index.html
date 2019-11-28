@@ -92,7 +92,7 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"coinmarketcapr"</span>)</a></code></pre></div>
 <p>And the development version can be installed from Github:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"amrrs/coinmarketcapr"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"amrrs/coinmarketcapr"</span>)</a></code></pre></div>
 </div>
 <div id="dependencies" class="section level2">
 <h2 class="hasAnchor">
@@ -102,6 +102,9 @@
 <li>jsonlite</li>
 <li>curl</li>
 <li>ggplot2</li>
+<li>data.table</li>
+<li>cli</li>
+<li>crayon</li>
 </ul>
 <p>Hence, these packages will be automatically installed while installing <code>coinmarketcapr</code>.</p>
 <p>Also note that, <code>coinmarketcapr</code> connects with Coinmarketcap API, hence it requires active internet connection for that.</p>
@@ -109,15 +112,23 @@
 <div id="whats-happening" class="section level2">
 <h2 class="hasAnchor">
 <a href="#whats-happening" class="anchor"></a>What’s happening</h2>
-<p>Inside this <code>coinmarketcapr</code> package, The function that you call from <code>coinmarketcapr</code> connects with the Coinmarketcap API using <code>curl</code> (via Internet) and retreives the required data in the form a <code>json</code> file which is then parsed with <code>jsonlite</code> and then flattened/converted to a dataframe and stored in your R Environment in the given variable name.</p>
+<p>Inside this <code>coinmarketcapr</code> package, the function that you call from <code>coinmarketcapr</code> connects with the Coinmarketcap API using <code>curl</code> (via Internet) and receives the required data in the form a <code>json</code> file which is then parsed with <code>jsonlite</code> and then flattened/converted to a dataframe and stored in your R Environment in the given variable name.</p>
 </div>
 <div id="getting-started" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-started" class="anchor"></a>Getting started</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(coinmarketcapr)</a>
-<a class="sourceLine" id="cb3-2" title="2">latest_marketcap &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_global_marketcap.html">get_global_marketcap</a></span>(<span class="st">'EUR'</span>)</a></code></pre></div>
 <p><code>coinmarketcapr</code> can be loaded just like any other R-package with <code><a href="https://www.rdocumentation.org/packages/base/topics/library">library(coinmarketcapr)</a></code>.</p>
-<p><strong>Note:</strong> <code>coinmarketcapr</code> package requires internet connection to function. If you’re trying this behind a Firewall, you might get: <code>Error in open.connection(con, "rb") : Timeout was reached</code> To resolve this error, Please refer this link: <a href="https://support.rstudio.com/hc/en-us/articles/200488488-Configuring-R-to-Use-an-HTTP-or-HTTPS-Proxy">Configuring R to Use an HTTP or HTTPS Proxy</a></p>
+<p><strong>Note:</strong> <code>coinmarketcapr</code> package requires an active internet connection. If you’re trying this behind a Firewall, you might get: <code>Error in open.connection(con, "rb") : Timeout was reached</code>. To resolve this error, please refer this link: <a href="https://support.rstudio.com/hc/en-us/articles/200488488-Configuring-R-to-Use-an-HTTP-or-HTTPS-Proxy">Configuring R to Use an HTTP or HTTPS Proxy</a></p>
+<p>The package allows to use the following functions <strong>without an API key</strong>:</p>
+<ul>
+<li><code>get_global_marketcap</code></li>
+<li>
+<code>get_crypto_listings</code> or previously <code>get_marketcap_ticker_all</code>
+</li>
+<li><code>plot_top_currencies</code></li>
+<li><code>get_valid_currencies</code></li>
+</ul>
+<p>All other functions require an <strong>existing API-key</strong>, which can be acquired at the <a href="https://pro.coinmarketcap.com/signup/">Signup</a> page. For more information about the Pricing models, visit <a href="https://coinmarketcap.com/api/pricing/">Pricing</a> and about further Authentication details visit <a href="https://coinmarketcap.com/api/documentation/v1/#section/Authentication">Authentication</a>.</p>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
@@ -127,10 +138,10 @@
 <a href="#example-1" class="anchor"></a>Example #1</h3>
 <p><strong>Extract Global Cryptocurreny Market cap in Euro Currency:</strong></p>
 <p>Code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(coinmarketcapr)</a>
-<a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="co">#get the global market cap details and assign it to a dataframe</span></a>
-<a class="sourceLine" id="cb4-4" title="4">latest_marketcap &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_global_marketcap.html">get_global_marketcap</a></span>(<span class="st">'EUR'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(coinmarketcapr)</a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">#get the global market cap details and assign it to a dataframe</span></a>
+<a class="sourceLine" id="cb3-4" title="4">latest_marketcap &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_global_marketcap.html">get_global_marketcap</a></span>(<span class="st">'EUR'</span>)</a></code></pre></div>
 <p>Output:</p>
 <pre><code>&gt; latest_marketcap
   total_market_cap_usd total_24h_volume_usd bitcoin_percentage_of_market_cap active_currencies
@@ -143,10 +154,10 @@
 <a href="#example-2" class="anchor"></a>Example #2</h3>
 <p><strong>Extract Details of all the cryptocurrenices offered by Coinmarketcap</strong></p>
 <p>Code:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(coinmarketcapr)</a>
-<a class="sourceLine" id="cb6-2" title="2"></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="co">#get the global market cap details and assign it to a dataframe</span></a>
-<a class="sourceLine" id="cb6-4" title="4">all_coins &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_marketcap_ticker_all.html">get_marketcap_ticker_all</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(coinmarketcapr)</a>
+<a class="sourceLine" id="cb5-2" title="2"></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#get the global market cap details and assign it to a dataframe</span></a>
+<a class="sourceLine" id="cb5-4" title="4">all_coins &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_marketcap_ticker_all.html">get_marketcap_ticker_all</a></span>()</a></code></pre></div>
 <p>Output:</p>
 <pre><code>&gt; head(all_coins)
             id         name symbol rank price_usd  price_btc X24h_volume_usd market_cap_usd
@@ -214,14 +225,14 @@
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>AbdulMajedRaja RS <br><small class="roles"> Author, maintainer </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li>Sebastian Gatscha <br><small class="roles"> Author, contributor </small>  </li>
 </ul>
 </div>
 
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/amrrs/coinmarketcapr"><img src="https://travis-ci.org/amrrs/coinmarketcapr.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://travis-ci.org/trafficonese/coinmarketcapr"><img src="https://travis-ci.org/trafficonese/coinmarketcapr.svg?branch=master" alt="Build Status"></a></li>
 <li><a href="https://cran.r-project.org/package=coinmarketcapr"><img src="http://www.r-pkg.org/badges/version/coinmarketcapr" alt="CRAN_Status_Badge"></a></li>
 <li><a href="https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr"><img src="https://cranlogs.r-pkg.org/badges/grand-total/coinmarketcapr" alt="DOWNLOADSTOTAL"></a></li>
 <li><a href="https://codecov.io/gh/amrrs/coinmarketcapr"><img src="https://codecov.io/gh/amrrs/coinmarketcapr/branch/master/graph/badge.svg" alt="codecov"></a></li>
@@ -232,7 +243,7 @@
 </div>
 
       <footer><div class="copyright">
-  <p>Developed by AbdulMajedRaja RS.</p>
+  <p>Developed by AbdulMajedRaja RS, Sebastian Gatscha.</p>
 </div>
 
 <div class="pkgdown">

@@ -6,9 +6,13 @@ cache: packages
 r_packages:
   - covr
 
+r_github_packages:
+  - r-lib/pkgdown
+
 before_install:
-  - curl -L https://entrust.com/root-certificates/entrust_l1k.cer -o l1k.crt
-  - curl --cacert l1k.crt https://scan.coverity.com/<etc>
+  - sudo curl -s -L https://entrust.com/root-certificates/entrust_l1k.cer -o /usr/local/share/ca-certificates/entrust_l1k.crt
+  - sudo update-ca-certificates
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
+  - Rscript -e 'pkgdown::build_site()'

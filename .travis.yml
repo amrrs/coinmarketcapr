@@ -6,5 +6,9 @@ cache: packages
 r_packages:
   - covr
 
+before_install:
+  - curl -L https://entrust.com/root-certificates/entrust_l1k.cer -o l1k.crt
+  - curl --cacert l1k.crt https://scan.coverity.com/<etc>
+
 after_success:
   - Rscript -e 'library(covr); codecov()'

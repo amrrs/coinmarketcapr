@@ -1,5 +1,6 @@
 library(coinmarketcapr)
 library(ggplot2)
+# library(testthat)
 
 sleeptime = 10
 
@@ -72,25 +73,25 @@ test_that("Cryptocurrencies - Free API",{
     ## get_crypto_map ####################
     res <- get_crypto_map()
     expect_is(res, "data.frame")
-    expect_false(anyNA(res[,1:8]))
+    expect_false(anyNA(res[,1:6]))
     expect_true(nrow(res) > 1)
     Sys.sleep(sleeptime)
 
     res <- get_crypto_map(symbol = "BTC")
     expect_is(res, "data.frame")
-    expect_false(anyNA(res[,1:8]))
+    expect_false(anyNA(res[,1:6]))
     expect_true(nrow(res) == 1)
     Sys.sleep(sleeptime)
 
     res <- get_crypto_map(symbol = c("BTC", "ETH"))
     expect_is(res, "data.frame")
-    expect_false(anyNA(res[,1:8]))
+    expect_false(anyNA(res[,1:6]))
     expect_true(nrow(res) == 2)
     Sys.sleep(sleeptime)
 
     res <- get_crypto_map(listing_status = "active", start = 1, limit = 10)
     expect_is(res, "data.frame")
-    expect_false(anyNA(res[,1:8]))
+    expect_false(anyNA(res[,1:6]))
     expect_true(all(res$is_active == 1))
     expect_true(nrow(res) == 10)
     Sys.sleep(sleeptime)

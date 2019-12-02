@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • coinmarketcapr</title>
+<title>Get active cryptocurrencies — get_crypto_map • coinmarketcapr</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,11 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Get active cryptocurrencies — get_crypto_map" />
+
+<meta property="og:description" content="Get all active cryptocurrencies supported by the
+platform including a unique id" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -108,17 +112,73 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Get active cryptocurrencies</h1>
+    <small class="dont-index">Source: <a href='https://github.com/amrrs/coinmarketcapr/blob/master/R/currencies.R'><code>R/currencies.R</code></a></small>
+    <div class="hidden name"><code>get_crypto_map.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="Getting_Started.html">Getting started with Coinmarketcapr</a></li>
-      </ul>
+    <div class="ref-description">
+    
+    <p>Get all active cryptocurrencies supported by the
+platform including a unique id</p>
+    
     </div>
+
+    <pre class="usage"><span class='fu'>get_crypto_map</span>(<span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>...</th>
+      <td><p>Further arguments passed to the request. Further information
+can be found in the <a href='https://coinmarketcap.com/api/documentation/v1/#operation'>API documentation</a></p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A dataframe with all active cryptocurrencies supported by the
+platform including a unique id for each cryptocurrency.</p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyMap'>API documentation</a></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other Cryptocurrencies: <code><a href='get_crypto_listings.html'>get_crypto_listings</a></code>,
+  <code><a href='get_crypto_marketpairs.html'>get_crypto_marketpairs</a></code>,
+  <code><a href='get_crypto_meta.html'>get_crypto_meta</a></code>,
+  <code><a href='get_crypto_ohlcv.html'>get_crypto_ohlcv</a></code>,
+  <code><a href='get_crypto_quotes.html'>get_crypto_quotes</a></code>,
+  <code><a href='get_marketcap_ticker_all.html'>get_marketcap_ticker_all</a></code>,
+  <code><a href='get_valid_currencies.html'>get_valid_currencies</a></code></p></div>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>get_crypto_map</span>()
+<span class='fu'>get_crypto_map</span>(<span class='kw'>symbol</span><span class='kw'>=</span><span class='st'>"BTC"</span>)
+<span class='fu'>get_crypto_map</span>(<span class='kw'>symbol</span><span class='kw'>=</span><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"BTC"</span>,<span class='st'>"ETH"</span>))
+<span class='fu'>get_crypto_map</span>(<span class='kw'>listing_status</span> <span class='kw'>=</span> <span class='st'>"active"</span>, <span class='kw'>start</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10</span>)
+<span class='fu'>get_crypto_map</span>(<span class='kw'>listing_status</span> <span class='kw'>=</span> <span class='st'>"inactive"</span>, <span class='kw'>start</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10</span>)
+<span class='co'># }</span></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#references">References</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
   </div>
 </div>
 

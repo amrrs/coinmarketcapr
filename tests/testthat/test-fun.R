@@ -22,10 +22,12 @@ test_that("No API",{
     ## get_crypto_listings ##################
     res <- get_crypto_listings()
     expect_is(res, "data.frame")
+    expect_false(anyNA(res[,-which(names(res) == "max_supply")]))
 
     ## get_global_marketcap ##################
     res <- get_global_marketcap('AUD')
     expect_is(res, "data.frame")
+    expect_false(anyNA(res))
 })
 
 ## Utils #####################
@@ -33,6 +35,8 @@ context("Utils")
 test_that("Utils",{
     skip_on_cran()
     reset_setup()
+    expect_error(get_crypto_marketpairs("EUR"))
+
     coinmarketcapr::setup("someinvalidkey")
     res <- get_setup()
     expect_is(res, "list")
@@ -50,8 +54,8 @@ test_that("Global-Metrics - Free API",{
     expect_is(res, "data.frame")
     expect_false(anyNA(res))
     expect_true(nrow(res) == 1)
-
     Sys.sleep(sleeptime)
+
     res <- get_global_marketcap(latest = T, time_start = Sys.Date() - 180,
                                 time_end = Sys.Date(), count = 10,
                                 interval = "yearly")
@@ -68,21 +72,25 @@ test_that("Cryptocurrencies - Free API",{
     ## get_crypto_map ####################
     res <- get_crypto_map()
     expect_is(res, "data.frame")
+    expect_false(anyNA(res[,1:8]))
     expect_true(nrow(res) > 1)
     Sys.sleep(sleeptime)
 
     res <- get_crypto_map(symbol = "BTC")
     expect_is(res, "data.frame")
+    expect_false(anyNA(res[,1:8]))
     expect_true(nrow(res) == 1)
     Sys.sleep(sleeptime)
 
     res <- get_crypto_map(symbol = c("BTC", "ETH"))
     expect_is(res, "data.frame")
+    expect_false(anyNA(res[,1:8]))
     expect_true(nrow(res) == 2)
     Sys.sleep(sleeptime)
 
     res <- get_crypto_map(listing_status = "active", start = 1, limit = 10)
     expect_is(res, "data.frame")
+    expect_false(anyNA(res[,1:8]))
     expect_true(all(res$is_active == 1))
     expect_true(nrow(res) == 10)
     Sys.sleep(sleeptime)
@@ -119,13 +127,21 @@ test_that("Cryptocurrencies - Free API",{
 
 
     ## get_crypto_listings ####################
+    res <- expect_warning(get_marketcap_ticker_all("GBP"))
+    expect_is(res, "data.frame")
+    expect_false(anyNA(res[,-which(names(res) == "max_supply")]))
+    expect_true(nrow(res) > 1)
+    Sys.sleep(sleeptime)
+
     res <- get_crypto_listings("GBP")
     expect_is(res, "data.frame")
+    expect_false(anyNA(res[,-which(names(res) == "max_supply")]))
     expect_true(nrow(res) > 1)
     Sys.sleep(sleeptime)
 
     res <- get_crypto_listings("GBP", latest = T, start = 1)
     expect_is(res, "data.frame")
+    expect_false(anyNA(res[,-which(names(res) == "max_supply")]))
     expect_true(nrow(res) > 1)
     Sys.sleep(sleeptime)
 

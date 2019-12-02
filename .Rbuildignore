@@ -6,3 +6,5 @@
 _pkgdown.yml
 ^CONDUCT\.md$
 ^CONTRIBUTING\.md$
+^doc$
+^Meta$

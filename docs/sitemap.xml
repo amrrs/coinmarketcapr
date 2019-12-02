@@ -7,6 +7,30 @@
     <loc>http://amrrs.github.io/coinmarketcapr/reference/coinmarketcapr.html</loc>
   </url>
   <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_crypto_listings.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_crypto_map.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_crypto_marketpairs.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_crypto_meta.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_crypto_ohlcv.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_crypto_quotes.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_exchange_map.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/get_exchange_meta.html</loc>
+  </url>
+  <url>
     <loc>http://amrrs.github.io/coinmarketcapr/reference/get_global_marketcap.html</loc>
   </url>
   <url>
@@ -17,6 +41,9 @@
   </url>
   <url>
     <loc>http://amrrs.github.io/coinmarketcapr/reference/plot_top_currencies.html</loc>
+  </url>
+  <url>
+    <loc>http://amrrs.github.io/coinmarketcapr/reference/setup.html</loc>
   </url>
   <url>
     <loc>http://amrrs.github.io/coinmarketcapr/articles/Getting_Started.html</loc>

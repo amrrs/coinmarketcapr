@@ -112,7 +112,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Extract Global Market Cap of Cryptocurrency Market</h1>
-    <small class="dont-index">Source: <a href='https://github.com/amrrs/coinmarketcapr/blob/master/R/coinmarketcapr.R'><code>R/coinmarketcapr.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/amrrs/coinmarketcapr/blob/master/R/global_metrics.R'><code>R/global_metrics.R</code></a></small>
     <div class="hidden name"><code>get_global_marketcap.Rd</code></div>
     </div>
 
@@ -122,7 +122,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_global_marketcap</span>(<span class='kw'>currency</span> <span class='kw'>=</span> <span class='st'>"USD"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_global_marketcap</span>(<span class='kw'>currency</span> <span class='kw'>=</span> <span class='st'>"USD"</span>, <span class='kw'>latest</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,25 +131,31 @@
       <th>currency</th>
       <td><p>currency code - Default is 'USD'</p></td>
     </tr>
+    <tr>
+      <th>latest</th>
+      <td><p>If `TRUE` (default), only the latest data is retrieved,
+otherwise historical data is returned. (NOTE: Historic Data require higher API rights)</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Further arguments can be passed to historical data. Further information
+can be found in the <a href='https://coinmarketcap.com/api/documentation/v1/#operation/getV1GlobalmetricsQuotesHistorical'>API documentation</a></p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A dataframe of to get global market cap of Cryptocurrencies Market</p>
+    <p>A dataframe with global market cap of Cryptocurrencies</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_global_marketcap</span>(<span class='st'>'AUD'</span>)</div><div class='output co'>#&gt;   total_market_cap_usd total_24h_volume_usd bitcoin_percentage_of_market_cap
-#&gt; 1         310383738667         129463586559                            61.96
-#&gt;   active_currencies active_assets active_markets        last_updated
-#&gt; 1               886          1364          19047 2019-06-27 22:39:31
-#&gt;   total_market_cap_aud total_24h_volume_aud
-#&gt; 1         443436867073         184961130601</div><div class='input'><span class='fu'>get_global_marketcap</span>(<span class='st'>'EUR'</span>)</div><div class='output co'>#&gt;   total_market_cap_usd total_24h_volume_usd bitcoin_percentage_of_market_cap
-#&gt; 1         310093425395         129301447844                            62.09
-#&gt;   active_currencies active_assets active_markets        last_updated
-#&gt; 1               886          1364          19047 2019-06-27 22:37:29
-#&gt;   total_market_cap_eur total_24h_volume_eur
-#&gt; 1         272837560894         113766654694</div></pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>get_global_marketcap</span>(<span class='st'>'AUD'</span>)
+<span class='fu'>get_global_marketcap</span>(<span class='st'>'EUR'</span>)
+<span class='fu'>get_global_marketcap</span>(<span class='kw'>latest</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>count</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>interval</span> <span class='kw'>=</span> <span class='st'>"yearly"</span>,
+                     <span class='kw'>time_start</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.time'>Sys.Date</a></span>()-<span class='fl'>180</span>, <span class='kw'>time_end</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.time'>Sys.Date</a></span>())
+
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -166,7 +172,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by AbdulMajedRaja RS.</p>
+  <p>Developed by AbdulMajedRaja RS, Sebastian Gatscha.</p>
 </div>
 
 <div class="pkgdown">

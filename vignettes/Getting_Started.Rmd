@@ -42,6 +42,7 @@ The function `get_global_marketcap()` fetches the USD value of global marketcap 
 
 ```{r}
 library(coinmarketcapr)
+coinmarketcapr::setup()
 get_global_marketcap()
 ```
 

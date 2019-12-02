@@ -287,13 +287,13 @@ test_that("Cryptocurrencies - Pro API (Sandbox)",{
     expect_true(nrow(res) == 1)
     Sys.sleep(sleeptime)
 
-    date <- format(Sys.Date()-past, "%Y-%m-%dT%H:%M:%S.000Z")
+    date <- format(Sys.Date()-past-5, "%Y-%m-%dT%H:%M:%S.000Z")
     res <- get_crypto_ohlcv(latest = F, id = 1, time_start = date)
     expect_is(res, "data.frame")
     expect_true(nrow(res) > 1)
     Sys.sleep(sleeptime)
 
-    date <- format(Sys.Date()-past, "%Y-%m-%dT%H:%M:%S.000Z")
+    date <- format(Sys.Date()-past-5, "%Y-%m-%dT%H:%M:%S.000Z")
     res <- get_crypto_ohlcv(latest = F, symbol = "BTC", time_start = date)
     expect_is(res, "data.frame")
     expect_true(nrow(res) > 1)

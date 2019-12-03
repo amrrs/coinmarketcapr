@@ -1,6 +1,6 @@
 ## Resubmission
 
-This is a resubmission after the package being pulled from CRAN. This has fixed the issue of handling API responses fail with a graceful error message. 
+This is a resubmission after the package being pulled from CRAN. This has fixed the issue of handling API responses fail with a graceful error message. Also fixing the version number and a typo.
 
 ## Test environments
 

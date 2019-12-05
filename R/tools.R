@@ -4,23 +4,25 @@
 #' @title Price Conversion
 #' @references \href{https://coinmarketcap.com/api/documentation/v1/#tag/tools}{API documentation}
 #' @param amount An amount of currency to convert. Example: 10.43
-#' @param id The CoinMarketCap currency ID of the base cryptocurrency or fiat to convert from. Example: "1"
+#' @param id The CoinMarketCap currency ID of the base cryptocurrency or fiat to convert from.
+#' If \code{id} and \code{symbol} are both missing or NULL, `BTC` is set as default symbol.
 #' @param symbol Alternatively the currency symbol of the base cryptocurrency or fiat to convert from.
-#' Example: "BTC". One "id" or "symbol" is required.
+#' One \code{id} or \code{symbol} is required.
 #' @param time Optional timestamp to reference historical pricing during conversion.
 #' If not passed, the current time will be used. If passed, we'll reference the closest historic
 #' values available for this conversion.
 #' @param convert Pass up to 120 comma-separated fiat or cryptocurrency symbols to convert
-#' the source amount to.
+#' the source amount to. Default is `USD`.
 #' @param convert_id Optionally calculate market quotes by CoinMarketCap ID instead of symbol.
 #' This option is identical to convert outside of ID format. Ex: convert_id=1,2781 would
 #' replace convert=BTC,USD in your query. This parameter cannot be used when convert is used.
 #' @family Tools
-#' @details Cache / Update frequency: Every 60 seconds for the lastest cryptocurrency and fiat currency rates.
+#' @details Cache / Update frequency:Every 60 seconds for the lastest cryptocurrency and fiat currency rates.
 #' Plan credit use: 1 call credit per call and 1 call credit per convert option beyond the first.
 #' CMC equivalent pages: Our cryptocurrency conversion page at \href{coinmarketcap.com/converter/}{converter}.
-#' @return A dataframe with all API key infos
+#' @return A dataframe with price conversion information
 #' @examples \dontrun{
+#' get_price_conversion(1)
 #' get_price_conversion(amount = 1, symbol = "BTC", convert = c("EUR","LTC","USD"))
 #' get_price_conversion(amount = 1, id=1, time = Sys.Date()-100)
 #' }

@@ -10,6 +10,11 @@ vignette: >
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
+    R.options = list(
+    crayon.enabled = FALSE,
+    crayon.colors = 256,
+    cli.unicode = FALSE
+  ),
   collapse = TRUE,
   comment = "#>"
 )
@@ -82,7 +87,7 @@ Since `coinmarketcapr`'s `get_crypto_listings()` returns a dataframe, it could b
 
 ```{r, fig.cap='Cryptocurrencies Price in USD Histogram', fig.width=6, fig.height=6}
 library(coinmarketcapr)
-library(dplyr)
+suppressPackageStartupMessages(library(dplyr))
 library(ggplot2)
 
 get_crypto_listings() %>% 

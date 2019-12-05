@@ -2,7 +2,7 @@ library(coinmarketcapr)
 library(ggplot2)
 # library(testthat)
 
-sleeptime = 10
+sleeptime = 3
 
 ## No-API #####################
 context("No API")
@@ -18,12 +18,9 @@ test_that("No API",{
     expect_error(get_crypto_marketpairs("EUR"))
     expect_error(get_crypto_ohlcv("EUR"))
 
-    expect_error(make_request())
-
     ## get_crypto_listings ##################
     res <- get_crypto_listings()
     expect_is(res, "data.frame")
-    expect_false(anyNA(res[,-which(names(res) == "max_supply")]))
 
     ## get_global_marketcap ##################
     res <- get_global_marketcap('AUD')
@@ -205,8 +202,77 @@ test_that("Plots ",{
     Sys.sleep(sleeptime)
 })
 
+context('Key Info')
+test_that("Key Info",{
+    skip_on_cran()
+    coinmarketcapr::setup('71618174-fd24-4c8f-8c94-83bc3e1cd68e')
+    res <- get_api_info()
+    expect_is(res, "data.frame")
+    expect_false(anyNA(res))
+
+    reset_setup()
+    expect_error(get_api_info())
+})
+
 
 ## Pro-API #####################
+context("Tools - Pro API")
+test_that("Tools - Pro API (Sandbox)",{
+    skip_on_cran()
+
+    ## get_price_conversion ####################
+    coinmarketcapr::reset_setup()
+    expect_error(get_price_conversion(amount = 1))
+    coinmarketcapr::setup()
+    expect_error(get_price_conversion(amount = 1))
+
+    coinmarketcapr::setup('5ca3ffee-dbb9-4dff-8f09-e1a9128dfa26', sandbox = TRUE)
+    res <- get_price_conversion(amount = 1)
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+
+    expect_error(get_price_conversion())
+    expect_error(get_price_conversion("a"))
+    expect_error(get_price_conversion(amount = 1, id=1, symbol="LTC"))
+    expect_error(get_price_conversion(amount = 1, id=1, convert="LTC", convert_id=1))
+
+    res <- get_price_conversion(amount = 1, id=1, convert="EUR")
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+
+    res <- get_price_conversion(amount = 1, symbol="LTC", convert="EUR")
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+
+    res <- get_price_conversion(amount = 1, symbol=NULL, id=NULL)
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+
+    res <- get_price_conversion(amount = 1, id=1, convert_id = 100)
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+
+    res <- get_price_conversion(amount = 1, id=1, time = Sys.Date()-100)
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+
+    res <- get_price_conversion(amount = 1, id=1, convert = c("EUR", "LTC","USD"))
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+
+    res <- get_price_conversion(amount = 1, symbol="BTC", convert = c("EUR","LTC","USD"))
+    expect_is(res, "data.frame")
+    expect_true(nrow(res) == 1)
+    expect_false(anyNA(res))
+})
+
 context("Cryptocurrencies - Pro API")
 test_that("Cryptocurrencies - Pro API (Sandbox)",{
     skip_on_cran()
@@ -223,7 +289,7 @@ test_that("Cryptocurrencies - Pro API (Sandbox)",{
     Sys.sleep(sleeptime)
 
     ## get_crypto_listings ####################
-    past <- 95
+    past <- 104
     date <- Sys.Date()-past
     res <- get_crypto_listings("GBP", latest = F, start = 1,
                                date = date, limit = 10,

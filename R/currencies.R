@@ -155,6 +155,10 @@ get_crypto_listings <- function(currency = "USD", latest = TRUE, ...) {
     ## Build Request (new API) ##########
     if (latest) {
         what <- paste0("cryptocurrency/listings/latest?convert=", currency)
+        whatelse <- list(...)
+        whatelse <- transform_args(whatelse)
+        if (!is.null(whatelse))
+            what <- paste0(what, "&", whatelse)
     } else {
         what <- paste0("cryptocurrency/listings/historical?convert=", currency)
         whatelse <- list(...)

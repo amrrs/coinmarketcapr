@@ -4,8 +4,13 @@
 \alias{get_crypto_ohlcv}
 \title{List latest/historical OHLCV values}
 \usage{
-get_crypto_ohlcv(currency = "USD", latest = TRUE, symbol = NULL,
-  id = NULL, ...)
+get_crypto_ohlcv(
+  currency = "USD",
+  latest = TRUE,
+  symbol = NULL,
+  id = NULL,
+  ...
+)
 }
 \arguments{
 \item{currency}{currency code - Default is 'USD'}
@@ -47,12 +52,13 @@ get_crypto_ohlcv("EUR", latest = F, time_period = "hourly",
 \href{https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyOhlcvLatest}{API documentation}
 }
 \seealso{
-Other Cryptocurrencies: \code{\link{get_crypto_listings}},
-  \code{\link{get_crypto_map}},
-  \code{\link{get_crypto_marketpairs}},
-  \code{\link{get_crypto_meta}},
-  \code{\link{get_crypto_quotes}},
-  \code{\link{get_marketcap_ticker_all}},
-  \code{\link{get_valid_currencies}}
+Other Cryptocurrencies: 
+\code{\link{get_crypto_listings}()},
+\code{\link{get_crypto_map}()},
+\code{\link{get_crypto_marketpairs}()},
+\code{\link{get_crypto_meta}()},
+\code{\link{get_crypto_quotes}()},
+\code{\link{get_marketcap_ticker_all}()},
+\code{\link{get_valid_currencies}()}
 }
 \concept{Cryptocurrencies}

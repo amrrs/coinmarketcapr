@@ -4,8 +4,14 @@
 \alias{get_crypto_quotes}
 \title{Get market quotes}
 \usage{
-get_crypto_quotes(currency = "USD", symbol = NULL, slug = NULL,
-  id = NULL, latest = TRUE, ...)
+get_crypto_quotes(
+  currency = "USD",
+  symbol = NULL,
+  slug = NULL,
+  id = NULL,
+  latest = TRUE,
+  ...
+)
 }
 \arguments{
 \item{currency}{currency code - Default is 'USD'}
@@ -50,12 +56,13 @@ get_crypto_quotes(latest = FALSE, symbol = c("BTC","ETH"),
 \href{https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyQuotesLatest}{API documentation}
 }
 \seealso{
-Other Cryptocurrencies: \code{\link{get_crypto_listings}},
-  \code{\link{get_crypto_map}},
-  \code{\link{get_crypto_marketpairs}},
-  \code{\link{get_crypto_meta}},
-  \code{\link{get_crypto_ohlcv}},
-  \code{\link{get_marketcap_ticker_all}},
-  \code{\link{get_valid_currencies}}
+Other Cryptocurrencies: 
+\code{\link{get_crypto_listings}()},
+\code{\link{get_crypto_map}()},
+\code{\link{get_crypto_marketpairs}()},
+\code{\link{get_crypto_meta}()},
+\code{\link{get_crypto_ohlcv}()},
+\code{\link{get_marketcap_ticker_all}()},
+\code{\link{get_valid_currencies}()}
 }
 \concept{Cryptocurrencies}

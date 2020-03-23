@@ -9,3 +9,5 @@ _pkgdown.yml
 ^doc$
 ^Meta$
 ^CRAN-RELEASE
+coinmarketcapr.png
+^CRAN-RELEASE$

@@ -31,12 +31,13 @@ get_crypto_map(listing_status = "inactive", start = 1, limit = 10)
 \href{https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyMap}{API documentation}
 }
 \seealso{
-Other Cryptocurrencies: \code{\link{get_crypto_listings}},
-  \code{\link{get_crypto_marketpairs}},
-  \code{\link{get_crypto_meta}},
-  \code{\link{get_crypto_ohlcv}},
-  \code{\link{get_crypto_quotes}},
-  \code{\link{get_marketcap_ticker_all}},
-  \code{\link{get_valid_currencies}}
+Other Cryptocurrencies: 
+\code{\link{get_crypto_listings}()},
+\code{\link{get_crypto_marketpairs}()},
+\code{\link{get_crypto_meta}()},
+\code{\link{get_crypto_ohlcv}()},
+\code{\link{get_crypto_quotes}()},
+\code{\link{get_marketcap_ticker_all}()},
+\code{\link{get_valid_currencies}()}
 }
 \concept{Cryptocurrencies}

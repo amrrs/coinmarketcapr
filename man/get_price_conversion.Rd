@@ -4,8 +4,7 @@
 \alias{get_price_conversion}
 \title{Price Conversion}
 \usage{
-get_price_conversion(amount = NULL, id, symbol, time, convert,
-  convert_id)
+get_price_conversion(amount = NULL, id, symbol, time, convert, convert_id)
 }
 \arguments{
 \item{amount}{An amount of currency to convert. Example: 10.43}

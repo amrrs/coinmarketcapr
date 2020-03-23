@@ -31,6 +31,7 @@ get_exchange_map(listing_status = "inactive",
 \href{https://coinmarketcap.com/api/documentation/v1/#operation/getV1ExchangeMap}{API documentation}
 }
 \seealso{
-Other Exchanges: \code{\link{get_exchange_meta}}
+Other Exchanges: 
+\code{\link{get_exchange_meta}()}
 }
 \concept{Exchanges}

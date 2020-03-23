@@ -16,12 +16,13 @@ Get Valid Currencies
 get_valid_currencies()
 }
 \seealso{
-Other Cryptocurrencies: \code{\link{get_crypto_listings}},
-  \code{\link{get_crypto_map}},
-  \code{\link{get_crypto_marketpairs}},
-  \code{\link{get_crypto_meta}},
-  \code{\link{get_crypto_ohlcv}},
-  \code{\link{get_crypto_quotes}},
-  \code{\link{get_marketcap_ticker_all}}
+Other Cryptocurrencies: 
+\code{\link{get_crypto_listings}()},
+\code{\link{get_crypto_map}()},
+\code{\link{get_crypto_marketpairs}()},
+\code{\link{get_crypto_meta}()},
+\code{\link{get_crypto_ohlcv}()},
+\code{\link{get_crypto_quotes}()},
+\code{\link{get_marketcap_ticker_all}()}
 }
 \concept{Cryptocurrencies}

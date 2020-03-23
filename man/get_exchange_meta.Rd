@@ -31,6 +31,7 @@ get_exchange_meta(slug = c("binance", "cryptsy"))
 \href{https://coinmarketcap.com/api/documentation/v1/#operation/getV1ExchangeInfo}{API documentation}
 }
 \seealso{
-Other Exchanges: \code{\link{get_exchange_map}}
+Other Exchanges: 
+\code{\link{get_exchange_map}()}
 }
 \concept{Exchanges}

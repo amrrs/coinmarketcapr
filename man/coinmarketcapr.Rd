@@ -3,7 +3,6 @@
 \docType{package}
 \name{coinmarketcapr}
 \alias{coinmarketcapr}
-\alias{coinmarketcapr-package}
 \title{coinmarketcapr: Cryptocurrency Market Cap Prices from CoinMarketCap}
 \description{
 Extract and monitor price and market cap of 'Cryptocurrencies'

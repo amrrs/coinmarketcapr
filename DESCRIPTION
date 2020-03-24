@@ -23,6 +23,5 @@ Suggests:
     ggthemes,
     dplyr
 RoxygenNote: 7.1.0
-VignetteBuilder: knitr
 Encoding: UTF-8
 BugReports: https://github.com/amrrs/coinmarketcapr/issues

@@ -1,6 +1,8 @@
 ## Resubmission
 
-This is a resubmission after removing Vignette and its dependency to fix api key issues and fixing tests
+This is a resubmission after removing Vignette and its dependency to fix api key issues and fixing tests.
+
+fixed: full URI issue
 
 ## Test environments
 

@@ -19,7 +19,7 @@
 #' @family Tools
 #' @details Cache / Update frequency:Every 60 seconds for the lastest cryptocurrency and fiat currency rates.
 #' Plan credit use: 1 call credit per call and 1 call credit per convert option beyond the first.
-#' CMC equivalent pages: Our cryptocurrency conversion page at \href{coinmarketcap.com/converter/}{converter}.
+#' CMC equivalent pages: Our cryptocurrency conversion page at \href{https://coinmarketcap.com/converter/}{converter}.
 #' @return A dataframe with price conversion information
 #' @examples \dontrun{
 #' get_price_conversion(1)

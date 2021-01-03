@@ -1,7 +1,7 @@
 Package: coinmarketcapr
 Type: Package
 Title: Get 'Cryptocurrencies' Market Cap Prices from Coin Market Cap
-Version: 0.3.2
+Version: 0.3.3
 Authors@R: c(
     person("AbdulMajedRaja","RS", email = "amrrs.data@gmail.com", role = c("aut", "cre")), 
     person("Sebastian","Gatscha", email = "sebastian_gatscha@gmx.at", role = c("aut", "ctb"))
@@ -22,6 +22,6 @@ Suggests:
     rmarkdown,
     ggthemes,
     dplyr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Encoding: UTF-8
 BugReports: https://github.com/amrrs/coinmarketcapr/issues

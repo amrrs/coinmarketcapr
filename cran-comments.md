@@ -1,6 +1,6 @@
-## Resubmission
+## Submission
 
-This is a resubmission after removing Vignette and its dependency to fix api key issues and fixing tests.
+New Release with a minor bug fix to respect extra paramaters like LIMIT
 
 fixed: full URI issue
 

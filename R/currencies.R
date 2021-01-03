@@ -152,20 +152,28 @@ get_crypto_listings <- function(currency = "USD", latest = TRUE, ...) {
 
     base_url <- .get_baseurl()
 
+    # for extra parameters like limit ########
+
+    whatelse <- list(...)
+
     ## Build Request (new API) ##########
     if (latest) {
         what <- paste0("cryptocurrency/listings/latest?convert=", currency)
     } else {
         what <- paste0("cryptocurrency/listings/historical?convert=", currency)
-        whatelse <- list(...)
+
         if (!"date" %in% names(whatelse)) {
             stop(cat(crayon::red(cli::symbol$cross,
                                  "A 'date' argument is needed for historical data.\n")))
         }
-        whatelse <- transform_args(whatelse)
-        if (!is.null(whatelse))
-            what <- paste0(what, "&", whatelse)
+
     }
+
+    # respecting extra paramaters ########
+
+    whatelse <- transform_args(whatelse)
+    if (!is.null(whatelse))
+      what <- paste0(what, "&", whatelse)
 
     apiurl <- sprintf("https://%s/v1/%s", base_url, what)
 

@@ -5,3 +5,6 @@ inst/doc
 *.Rproj
 doc
 Meta
+coinmarketcapr.Rcheck/
+coinmarketcapr*.tar.gz
+coinmarketcapr*.tgz

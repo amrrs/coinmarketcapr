@@ -11,3 +11,6 @@ _pkgdown.yml
 ^CRAN-RELEASE
 coinmarketcapr.png
 ^CRAN-RELEASE$
+^coinmarketcapr\.Rcheck$
+^coinmarketcapr.*\.tar\.gz$
+^coinmarketcapr.*\.tgz$

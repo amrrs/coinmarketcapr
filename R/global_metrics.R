@@ -39,6 +39,9 @@ get_global_marketcap <- function(currency = "USD", latest = TRUE, ...) {
     ## Build Request (new API) ##########
     if (latest) {
         what <- paste0("global-metrics/quotes/latest?convert=", currency)
+        whatelse <- list(...)
+        whatelse <- transform_args(whatelse)
+        what <- paste0(what, "&", whatelse)
     } else {
         what <- paste0("global-metrics/quotes/historical?convert=", currency)
         whatelse <- list(...)

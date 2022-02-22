@@ -7,7 +7,7 @@ Authors@R: c(
     person("Sebastian","Gatscha", email = "sebastian_gatscha@gmx.at", role = c("aut", "ctb"))
     )
 Description: Extract and monitor price and market cap of 'Cryptocurrencies' from 'Coin Market Cap' <https://coinmarketcap.com/api/>. 
-URL: http://github.com/amrrs/coinmarketcapr
+URL: https://github.com/amrrs/coinmarketcapr
 License: MIT + file LICENSE
 LazyData: true
 Imports: jsonlite,

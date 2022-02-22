@@ -61,3 +61,4 @@ get_global_marketcap <- function(currency = "USD", latest = TRUE, ...) {
     # browser()
     modify_result(req$content)
 }
+

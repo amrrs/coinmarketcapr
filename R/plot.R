@@ -39,7 +39,7 @@ plot_top_currencies <- function(currency = "USD", k = 5, bar_color = "grey") {
     #     as.numeric(temp[, tolower(paste0("price_", currency))]), 2)
 
     ggplot(temp, aes_string("name", paste0(toupper(currency),"_price"))) +
-        geom_col(fill = bar_color) +
+        geom_bar(stat = 'identity', fill = bar_color) +
         ylab(paste0("Price in ", currency)) +
         xlab("Cryptocurrencies") +
         ggtitle(paste0("Top ", k, " Cryptocurrencies with Largest Marketcaps"))

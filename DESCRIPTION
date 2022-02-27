@@ -18,10 +18,7 @@ Imports: jsonlite,
     crayon
 Suggests: 
     testthat,
-    knitr,
-    rmarkdown,
-    ggthemes,
-    dplyr
+    knitr 
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 BugReports: https://github.com/amrrs/coinmarketcapr/issues

@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot.R
 \name{plot_top_currencies}
 \alias{plot_top_currencies}
-\title{Plot The Price of the Largest Market Cap Cryptocurrencies}
+\title{Plot The Price of the Largest Market Cap Cryptocurrencies (API Key required)}
 \usage{
 plot_top_currencies(currency = "USD", k = 5, bar_color = "grey")
 }
@@ -17,7 +17,7 @@ plot_top_currencies(currency = "USD", k = 5, bar_color = "grey")
 A ggplot of top Cryptocurrencies based on their rank (Market Cap)
 }
 \description{
-Plot The Price of the Largest Market Cap Cryptocurrencies
+Plot The Price of the Largest Market Cap Cryptocurrencies (API Key required)
 }
 \examples{
 \dontrun{

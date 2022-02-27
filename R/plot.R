@@ -1,5 +1,5 @@
 
-#' Plot The Price of the Largest Market Cap Cryptocurrencies
+#' Plot The Price of the Largest Market Cap Cryptocurrencies (API Key required)
 #'
 #' @param currency currency code (default is 'USD')
 #' @param k the number of top cryptocurrencies to plot (default is 5)

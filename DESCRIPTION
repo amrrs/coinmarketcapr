@@ -9,7 +9,6 @@ Authors@R: c(
 Description: Extract and monitor price and market cap of 'Cryptocurrencies' from 'Coin Market Cap' <https://coinmarketcap.com/api/>. 
 URL: https://github.com/amrrs/coinmarketcapr
 License: MIT + file LICENSE
-LazyData: true
 Imports: jsonlite,
     ggplot2,
     data.table,
